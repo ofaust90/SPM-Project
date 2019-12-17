@@ -260,35 +260,6 @@
           <text>0</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1s1subx">
-        <inputEntry id="UnaryTests_0ybi3ys">
-          <text>-</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1p77hwb">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0ljoyuu">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_14a6vvr">
-          <text></text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0hp8cav">
-        <description></description>
-        <inputEntry id="UnaryTests_0fy13ok">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1vofinh">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1of00s1">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0tbf1o6">
-          <text></text>
-        </outputEntry>
-      </rule>
     </decisionTable>
   </decision>
 </definitions>
