@@ -3,9 +3,12 @@ package com.unicam.crm;
 import com.unicam.crm.bexio.model.BexioContactGet;
 import com.unicam.rest.model.Customer;
 import com.unicam.rest.model.CustomerExchange;
+import com.unicam.rest.model.Offer;
+import com.unicam.rest.model.OfferExchange;
 
 public interface CRMConnector {
 	
+	//Customers
 	public Customer addCustomer(CustomerExchange c);
 	
 	public Customer getCustomer(int id);
@@ -14,4 +17,20 @@ public interface CRMConnector {
 	
 	public <C extends Customer> CustomerExchange crmCustomerMapper( C crmCustomer);
 
+	//Offers
+	public Offer addOffer(OfferExchange offer);
+	
+	public boolean acceptOffer(int id);
+	
+	public boolean sendOffer(int id, String email);
+	
+	public Offer offerMapper(OfferExchange o);
+	
+	public <O extends Offer> OfferExchange crmOfferMapper(O crmOffer);
+	
+	//Invoice
+	public int createInvoiceFromOffer(int id);
+	
+	public boolean sendInvoice(int id, String email);
+	
 }
