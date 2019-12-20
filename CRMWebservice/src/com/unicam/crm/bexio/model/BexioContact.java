@@ -15,9 +15,17 @@ public class BexioContact implements Customer {
 	
 
 	private String name_1;
+	private String name_2;
 	private String user_id;
 	private String owner_id;
 	private String contact_type_id;
+	private String address;
+	private String city;
+	private String remarks; //serves as customer type identifier
+	private String mail;
+	private String postcode;
+	
+	
 	
 	
 	public BexioContact() {
@@ -51,6 +59,55 @@ public class BexioContact implements Customer {
 	public void setContact_type_id(String contact_type_id) {
 		this.contact_type_id = contact_type_id;
 	}
+
+	public String getName_2() {
+		return name_2;
+	}
+
+	public void setName_2(String name_2) {
+		this.name_2 = name_2;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getRemarks() {
+		return remarks;
+	}
+
+	public void setRemarks(String remarks) {
+		this.remarks = remarks;
+	}
+
+	public String getMail() {
+		return mail;
+	}
+
+	public void setMail(String mail) {
+		this.mail = mail;
+	}
+
+	public String getPostcode() {
+		return postcode;
+	}
+
+	public void setPostcode(String postcode) {
+		this.postcode = postcode;
+	}
+	
 	
 	
 

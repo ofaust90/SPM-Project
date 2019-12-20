@@ -1,5 +1,5 @@
 package com.unicam.rest.model;
 
-public class Offer {
+public interface Offer {
 
 }
