@@ -30,7 +30,7 @@
           <text>-</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1pipd45">
-          <text>high</text>
+          <text>"high"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_09tp213">
@@ -45,7 +45,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0fxj8o0">
-          <text>high</text>
+          <text>"high"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1fzem61">
@@ -60,7 +60,7 @@
           <text>[8000..9000]</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0wahdvz">
-          <text>high</text>
+          <text>"high"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1br1aem">
@@ -75,7 +75,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1wnuvfo">
-          <text>high</text>
+          <text>"high"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_157a3j7">
@@ -90,7 +90,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vpc9ls">
-          <text>low</text>
+          <text>"low"</text>
         </outputEntry>
       </rule>
     </decisionTable>
