@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" id="Definitions_1ocpouh" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.0.0-beta.2">
+  <decision id="OfferRiskAssessment" name="Offer Risk Assessment">
+    <decisionTable id="decisionTable_1" hitPolicy="FIRST">
+      <input id="input_1" label="Customer Type">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>CustomerType</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_11rkt59" label="Total Price">
+        <inputExpression id="LiteralExpression_0qivuqo" typeRef="integer">
+          <text>TotalPrice</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1tpxnv5" label="ZIP Code">
+        <inputExpression id="LiteralExpression_02aud63" typeRef="integer">
+          <text>ZIPCode</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" label="Risk" name="Risk" typeRef="string" />
+      <rule id="DecisionRule_189re5t">
+        <description>high risk</description>
+        <inputEntry id="UnaryTests_0qfpeau">
+          <text>"A"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0iki5on">
+          <text>&gt;5000</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ukhal0">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1pipd45">
+          <text>high</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_09tp213">
+        <description>high risk</description>
+        <inputEntry id="UnaryTests_1ihgrwf">
+          <text>"B"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1asuch1">
+          <text>&gt;2000</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ooy83y">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0fxj8o0">
+          <text>high</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1fzem61">
+        <description>high risk</description>
+        <inputEntry id="UnaryTests_1pllxdd">
+          <text>"C"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gg40pz">
+          <text>&gt;500</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hydgoi">
+          <text>[8000..9000]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wahdvz">
+          <text>high</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1br1aem">
+        <description>high risk</description>
+        <inputEntry id="UnaryTests_11fwjsg">
+          <text>"new"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cv6y2e">
+          <text>&gt;1000</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bwfz50">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1wnuvfo">
+          <text>high</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_157a3j7">
+        <description>low risk</description>
+        <inputEntry id="UnaryTests_12fkjt8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gc5ns3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jnbrw8">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vpc9ls">
+          <text>low</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
