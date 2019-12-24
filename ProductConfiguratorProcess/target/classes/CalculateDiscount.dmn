@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" id="Definitions_0o0pfxx" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.0.0-beta.2">
+  <decision id="CalculateDiscount" name="Calculate Discount">
+    <decisionTable id="decisionTable_1" hitPolicy="FIRST">
+      <input id="input_1" label="Customer Type">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>CustomerType</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0m810yo">
+          <text>"A","B","C","new"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_1lfqaov" label="Number of items">
+        <inputExpression id="LiteralExpression_1yoasv4" typeRef="integer">
+          <text>NumberOfItems</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1b38bqv" label="Special Discount granted by Sales">
+        <inputExpression id="LiteralExpression_1irc5yp" typeRef="boolean">
+          <text>SpecialDiscount</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" label="Discount" name="Discount" typeRef="double" />
+      <rule id="DecisionRule_0b3x7z9">
+        <description>20%</description>
+        <inputEntry id="UnaryTests_1ki9qjg">
+          <text>"A"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0byu5m6">
+          <text>[20..50]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14rwxo3">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1pebtmc">
+          <text>0.2</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0n7beu1">
+        <description>25%</description>
+        <inputEntry id="UnaryTests_1jxe3ov">
+          <text>"A"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18diiv3">
+          <text>[20..50]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12deaao">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_11azav3">
+          <text>0.25</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1pkb5ns">
+        <description>30% </description>
+        <inputEntry id="UnaryTests_1se620q">
+          <text>"A"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1435sdb">
+          <text>&gt;50</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0n1icdh">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0qne4lz">
+          <text>0.3</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0l8edau">
+        <description>35%</description>
+        <inputEntry id="UnaryTests_1ha7xh1">
+          <text>"A"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_066gj55">
+          <text>&gt;50</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_002ribe">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_17l7p8z">
+          <text>0.35</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1b18ufz">
+        <description>10%</description>
+        <inputEntry id="UnaryTests_06hwggz">
+          <text>"A"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fsr5n3">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tsntl8">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0xp7rx6">
+          <text>0.1</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0maa0eu">
+        <description>10%</description>
+        <inputEntry id="UnaryTests_18ebp7f">
+          <text>"B"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1492w9t">
+          <text>[20..50]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uy8rgs">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0hnxmbs">
+          <text>0.1</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0m70hiw">
+        <description>15%</description>
+        <inputEntry id="UnaryTests_0823f90">
+          <text>"B"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_040nifz">
+          <text>[20..50]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_005sab5">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ace2vz">
+          <text>0.15</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_11x9ygp">
+        <description>20%</description>
+        <inputEntry id="UnaryTests_194tyhf">
+          <text>"B"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0o3qw4y">
+          <text>&gt;50</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gru2je">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0pej5f1">
+          <text>0.2</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_08q7uhm">
+        <description>25%</description>
+        <inputEntry id="UnaryTests_1uzfowg">
+          <text>"B"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10dxfem">
+          <text>&gt;50</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hlrple">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0c5337r">
+          <text>0.25</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_08n8ksi">
+        <description>5%</description>
+        <inputEntry id="UnaryTests_0ago78t">
+          <text>"C"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07eoj3g">
+          <text>[20..50]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ofkhkq">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0idn0k2">
+          <text>0.05</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0cm74mb">
+        <description>10%</description>
+        <inputEntry id="UnaryTests_03tnoun">
+          <text>"C"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16kaw6q">
+          <text>[20..50]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16mx4as">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0gofirh">
+          <text>0.1</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0lwjyk4">
+        <description>15%</description>
+        <inputEntry id="UnaryTests_042oqnd">
+          <text>"C"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1idtsix">
+          <text>&gt;50</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pgojjk">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14dhpuo">
+          <text>0.15</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0vym8pl">
+        <description>20%</description>
+        <inputEntry id="UnaryTests_0ivuer8">
+          <text>"C"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hvzc8b">
+          <text>&gt;50</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vnw8ct">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0rd3jfs">
+          <text>0.20</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0gddmu2">
+        <description>5%</description>
+        <inputEntry id="UnaryTests_0mrmh00">
+          <text>"new"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hzloll">
+          <text>&gt;50</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ki9yrz">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_164y6f6">
+          <text>0.05</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1itgk80">
+        <description>5%</description>
+        <inputEntry id="UnaryTests_0jf0ozj">
+          <text>"B","C","new"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1eehdlx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ovfd1g">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_09b20tu">
+          <text>0.05</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0mnqbzg">
+        <inputEntry id="UnaryTests_0fan09w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zsiz3h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qqhy37">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1q6vbgj">
+          <text>0</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

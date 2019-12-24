@@ -131,6 +131,25 @@
     </dependency>
 
     <!-- Add your own dependencies here, if in compile scope, they are added to the war -->
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>1.8</version>
+		</dependency>
+		<dependency>
+	    <groupId>org.glassfish.jersey.media</groupId>
+	    <artifactId>jersey-media-json-jackson</artifactId>
+	    <version>2.25.1</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/com.sun.jersey/jersey-json -->
+	<dependency>
+	    <groupId>com.sun.jersey</groupId>
+	    <artifactId>jersey-json</artifactId>
+	    <version>1.19.4</version>
+	</dependency>
+		
+
 
   </dependencies>
 
