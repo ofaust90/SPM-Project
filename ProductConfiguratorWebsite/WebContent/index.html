@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--<link rel="icon" href="../../favicon.ico">-->
+
+    <title>Product Configurator</title>
+
+    <!-- Bootstrap core CSS
+    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!--<link href="bootstrap/dist/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">-->
+
+    <!-- Custom styles for this template -->
+
+
+<link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/chat.css" rel="stylesheet">
+
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+	<div id="header">
+		<img id="header-logo" src="assets/img/logo.jpeg" height ="125%" alt="" />
+	</div>
+
+    <div class="container">
+
+      <div class="row" id="startForm">
+          <div class="col-md-12">
+
+            <h1>Welcome to the Laptop wholesale product configurator</h1>
+            <p>Please provide us with some information to your request to start the product configurator</p>
+            <form>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="customerName" aria-describedby="nameHelp" placeholder="Enter your Name">
+                <small id="nameHelp" class="form-text text-muted">Please provide your name that we can identify your request.</small>
+              </div>
+                 <div class="form-group">
+                <label for="name">Firstname</label>
+                <input type="text" class="form-control" id="customerFirstName" aria-describedby="nameHelp" placeholder="Enter your Firstname">
+                <small id="nameHelp" class="form-text text-muted">Please provide your name that we can identify your request.</small>
+              </div>
+              <div class="form-group">
+                <label for="email">E-Mail</label>
+                <input type="text" class="form-control" id="customerEmail" aria-describedby="emailHelp" type="email" placeholder="Enter your E-Mail">
+                <small id="emailHelp" class="form-text text-muted">Please provide your email address so that we can get back to you.</small>
+              </div>
+                 <div class="form-group">
+                <label for="name">Phone</label>
+                <input type="text" class="form-control" id="customerPhone" aria-describedby="nameHelp" placeholder="Enter your Adress">
+                <small id="phoneHelp" class="form-text text-muted">Please provide your phonenumber.</small>
+              </div>
+                <div class="form-group">
+                <label for="name">Address</label>
+                <input type="text" class="form-control" id="customerAddress" aria-describedby="nameHelp" placeholder="Enter your Adress">
+                <small id="adressHelp" class="form-text text-muted">Please provide your address.</small>
+              </div>
+                <div class="form-group">
+                <label for="name">Zip</label>
+                <input type="text" class="form-control" id="customerZip" aria-describedby="nameHelp" placeholder="Enter your Zip">
+                <small id="zipHelp" class="form-text text-muted">Please provide your zip.</small>
+              </div>
+              <div class="form-group">
+                <label for="name">Existing Customer ID</label>
+                <input type="text" class="form-control" id="customerID" aria-describedby="nameHelp" placeholder="Enter your Customer ID" value="0">
+                <small id="idHelp" class="form-text text-muted">Please provide your customer id that we can identify your request.</small>
+              </div>
+            
+
+
+              <input type="button" class="btn btn-default" id="startFormBtn" value="Start Configurator!">
+            </form>
+          </div>
+        </div>
+
+         
+        <!---product conf Form-->
+        <div  id="productForm" class="row hidden">
+
+
+                    <div class="row mb-xl">
+                      <div class="col-md-12">
+                            <h2>Product configurator:</h2>
+                          <span id="prioHeaderMsg"> Please configure your product to receive an offer.</span>
+                      </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-md-4">
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                            <h3 class="panel-title"><b>Information</b></h3>
+                            </div>
+                            <div class="panel-body example-questions">
+                            Customer: <span id="userNameSpan"></span><br/>
+                          	<span id="typeSpan"></span><br/>
+
+                            </div>
+                          </div>
+
+                        </div>
+                        <div class="col-md-8">
+
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                            <h3 class="panel-title" id="prioTitle"><b>Laptop:</b></h3>
+                            </div>
+                            <div class="panel-body example-questions">
+                         
+                         
+                         <table>   
+                <tr> 
+             
+              <td>  <label for="preventWork">CPU</label></td>
+               <td>  <label class="radio-inline"><input type="radio" value="i5" name="cpu"  id="cpui5">i5</label></td>
+                <td> <label class="radio-inline"><input type="radio" value="i7" name="cpu" id="cpui7"checked>i7</label></td>
+             
+              </tr>
+              <tr>
+            
+                <td> <label for="onSite">RAM</label></td>
+                 <td><label class="radio-inline"><input type="radio" value="8gb" name="ram" checked>8GB</label></td>
+                 <td><label class="radio-inline"><input type="radio" value="16gb"  name="ram">16GB</label></td>
+            
+              </tr>
+              <tr>
+             
+                 <td><label for="voulnerable">Display Size</label></td>
+                 <td><label class="radio-inline"><input type="radio" value="15inch" name="displaysize" >15'</label></td>
+                 <td><label class="radio-inline"><input type="radio" value="17inch"  name="displaysize" checked>17'</label></td>
+             
+              </tr>
+              <tr>
+              
+                 <td><label for="voulnerable">HDD</label></td>
+                 <td><label class="radio-inline"><input type="radio" value="500GB" name="hdd" >500GB</label></td>
+                 <td><label class="radio-inline"><input type="radio" value="1TB"  name="hdd" checked>1TB</label></td>
+              
+              </tr>
+              
+               <tr>
+                
+                 <td><label for="voulnerable">Quantity</label></td>
+                 <td><input type="range" name="Amount" min="5" max="100" id="amountslider" default="50"></td>
+                 <td> <span id="amountdisplay" style="margin-left: 15px;">50</span><span style="margin-left: 5px;"> items</span></td>
+                
+             
+              </tr>
+              
+               <tr>
+               <td colspan="3">
+                <span>Do you have a question regarding this request?<br> </span><input type="checkbox" id="callbackRequested" > Request a callback<br>
+                  
+               </td>
+               
+               </tr>
+              
+              </table>
+              
+                
+                            <input type="button" id="requestButton" value="Send request">
+                          </div>
+                        </div>
+                        </div>
+              </div>
+            </div><!--//END configurator Form-->
+
+
+		<div id="completeForm" class="row hidden">
+			<h1>Many thanks for your Request</h1>
+			We will proceed your request as soon as possible and send you your personalized offer via e-Mail.
+		</div>
+
+      </div>
+
+      <div class="footer" style="margin-top:40px;" >
+    			<div class="container">
+    				<div class="col-md-8">
+    					<p>
+    							© Copyright 2020</a>, All Rights
+    							Reserved - <i><b></b></i>
+    						</p>
+    				</div>
+    				<div class="col-md-4">
+    									<span style="padding-right: 15px;"></span>
+
+    				</div>
+
+    </div>
+    </div>
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+     --><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/camundaManager.js"></script>
+<script src="assets/js/processFlowController.js"></script>
+ 
+
+  </body>
+  <script>
+  	var slider= $("#amountslider");
+  	
+  	slider.on("change", function(){
+  		var val = slider.val();
+  		$("#amountdisplay").text(" " +	val);
+  	});
+  	
+  </script>
+</html>
