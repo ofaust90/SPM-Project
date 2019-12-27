@@ -25,7 +25,7 @@ public class CreateLeadDelegate extends BaseDelegateClass implements JavaDelegat
 		//e.g. get process variables
 		CustomerExchange returnedCustomer;
 		
-		if(execution.hasVariable("customerID")) {
+		if(execution.hasVariable("v_customerID")) {
 			//if has existing id, get existing customer 
 			int customerId = (int) execution.getVariable("customerId");
 			System.out.println("debug customer id: "+customerId);
@@ -38,6 +38,7 @@ public class CreateLeadDelegate extends BaseDelegateClass implements JavaDelegat
 			CustomerExchange newCustomer = new CustomerExchange();
 			newCustomer.setName("camunda");
 			newCustomer.setEmail("oliver.faust90@gmail.com");
+			newCustomer.setCustomerType("new");
 			//.... data should be retrieved from execution envoironemnt vars
 			
 			returnedCustomer = createNewLead(newCustomer);
@@ -48,8 +49,14 @@ public class CreateLeadDelegate extends BaseDelegateClass implements JavaDelegat
 		
 		
 		//store whatever you want in process variable
+		execution.setVariable("customerID", returnedCustomer.getId());
 		execution.setVariable("customerName", returnedCustomer.getName());
 		execution.setVariable("customerEmail", returnedCustomer.getEmail());
+		execution.setVariable("customerType", "A");
+		execution.setVariable("numberOfItems", 51);
+		execution.setVariable("callbackRequested", true);
+
+		
 	
 		
 

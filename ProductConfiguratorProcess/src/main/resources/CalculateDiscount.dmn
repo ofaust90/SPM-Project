@@ -4,7 +4,7 @@
     <decisionTable id="decisionTable_1" hitPolicy="FIRST">
       <input id="input_1" label="Customer Type">
         <inputExpression id="inputExpression_1" typeRef="string">
-          <text>CustomerType</text>
+          <text>customerType</text>
         </inputExpression>
         <inputValues id="UnaryTests_0m810yo">
           <text>"A","B","C","new"</text>
@@ -12,15 +12,15 @@
       </input>
       <input id="InputClause_1lfqaov" label="Number of items">
         <inputExpression id="LiteralExpression_1yoasv4" typeRef="integer">
-          <text>NumberOfItems</text>
+          <text>numberOfItems</text>
         </inputExpression>
       </input>
       <input id="InputClause_1b38bqv" label="Special Discount granted by Sales">
         <inputExpression id="LiteralExpression_1irc5yp" typeRef="boolean">
-          <text>SpecialDiscount</text>
+          <text>specialDiscount</text>
         </inputExpression>
       </input>
-      <output id="output_1" label="Discount" name="Discount" typeRef="double" />
+      <output id="output_1" label="Discount" name="discount" typeRef="double" />
       <rule id="DecisionRule_0b3x7z9">
         <description>20%</description>
         <inputEntry id="UnaryTests_1ki9qjg">
@@ -33,7 +33,7 @@
           <text>false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1pebtmc">
-          <text>0.2</text>
+          <text>20</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0n7beu1">
@@ -48,11 +48,11 @@
           <text>true</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_11azav3">
-          <text>0.25</text>
+          <text>25</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1pkb5ns">
-        <description>30% </description>
+        <description>30%</description>
         <inputEntry id="UnaryTests_1se620q">
           <text>"A"</text>
         </inputEntry>
@@ -63,7 +63,7 @@
           <text>false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0qne4lz">
-          <text>0.3</text>
+          <text>30</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0l8edau">
@@ -78,7 +78,7 @@
           <text>true</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_17l7p8z">
-          <text>0.35</text>
+          <text>35</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1b18ufz">
@@ -93,7 +93,7 @@
           <text>-</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0xp7rx6">
-          <text>0.1</text>
+          <text>10</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0maa0eu">
@@ -108,7 +108,7 @@
           <text>false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0hnxmbs">
-          <text>0.1</text>
+          <text>10</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0m70hiw">
@@ -123,7 +123,7 @@
           <text>true</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ace2vz">
-          <text>0.15</text>
+          <text>15</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_11x9ygp">
@@ -138,7 +138,7 @@
           <text>false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0pej5f1">
-          <text>0.2</text>
+          <text>20</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_08q7uhm">
@@ -153,7 +153,7 @@
           <text>true</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0c5337r">
-          <text>0.25</text>
+          <text>25</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_08n8ksi">
@@ -168,7 +168,7 @@
           <text>false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0idn0k2">
-          <text>0.05</text>
+          <text>5</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0cm74mb">
@@ -183,7 +183,7 @@
           <text>true</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0gofirh">
-          <text>0.1</text>
+          <text>10</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0lwjyk4">
@@ -198,7 +198,7 @@
           <text>false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_14dhpuo">
-          <text>0.15</text>
+          <text>15</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0vym8pl">
@@ -213,7 +213,7 @@
           <text>true</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0rd3jfs">
-          <text>0.20</text>
+          <text>20</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0gddmu2">
@@ -228,7 +228,7 @@
           <text>false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_164y6f6">
-          <text>0.05</text>
+          <text>5</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1itgk80">
@@ -243,7 +243,7 @@
           <text>true</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_09b20tu">
-          <text>0.05</text>
+          <text>5</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0mnqbzg">
