@@ -25,23 +25,32 @@ public class CreateLeadDelegate extends BaseDelegateClass implements JavaDelegat
 		//e.g. get process variables
 		CustomerExchange returnedCustomer;
 		
-		if(execution.hasVariable("v_customerID")) {
+		int customerID = (int) execution.getVariable("v_customerID");
+		
+		
+		if(customerID > 0) {
 			//if has existing id, get existing customer 
-			int customerId = (int) execution.getVariable("customerId");
-			System.out.println("debug customer id: "+customerId);
+			System.out.println("debug customer id: "+customerID);
 			
 			//call method to consume rest service
-			returnedCustomer = getExistingLead(customerId);
+			returnedCustomer = getExistingLead(customerID);
+			
+			
 		}else {
 			//else create new customer
 			
 			CustomerExchange newCustomer = new CustomerExchange();
-			newCustomer.setName("camunda");
-			newCustomer.setEmail("oliver.faust90@gmail.com");
+			newCustomer.setFamilyname((String) execution.getVariable("v_customerName"));
+			newCustomer.setName((String) execution.getVariable("v_customerFirstName"));
+			newCustomer.setAddress((String) execution.getVariable("v_customerAddress"));
+			newCustomer.setEmail((String) execution.getVariable("v_customerEmail"));
+			newCustomer.setPostcode((int) execution.getVariable("v_customerZip"));
 			newCustomer.setCustomerType("new");
 			//.... data should be retrieved from execution envoironemnt vars
 			
 			returnedCustomer = createNewLead(newCustomer);
+			
+		
 			
 			
 		}
@@ -52,11 +61,12 @@ public class CreateLeadDelegate extends BaseDelegateClass implements JavaDelegat
 		execution.setVariable("customerID", returnedCustomer.getId());
 		execution.setVariable("customerName", returnedCustomer.getName());
 		execution.setVariable("customerEmail", returnedCustomer.getEmail());
-		execution.setVariable("customerType", "A");
-		execution.setVariable("numberOfItems", 51);
-		execution.setVariable("callbackRequested", true);
-
+		execution.setVariable("ZIPCode", returnedCustomer.getPostcode());
+		execution.setVariable("numberOfItems", execution.getVariable("v_productAmount"));
+		execution.setVariable("callbackRequested", execution.getVariable("callbackRequested"));
+		execution.setVariable("customerType", returnedCustomer.getCustomerType());
 		
+		execution.setVariable("specialDiscount", false);
 	
 		
 

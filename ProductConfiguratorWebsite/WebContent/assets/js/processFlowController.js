@@ -38,7 +38,7 @@ ProcessFlowController.prototype.registerEventHandlers = function(){
   $("#startFormBtn").on("click", function(){
 
     //start new process instance in camunda
-	  _this.$camundaManager.startProcess("ProductConfiguratorProcess", _this.businessKey,function(){
+	  _this.$camundaManager.startProcess("ProductConfiguratorProcessCustomer", _this.businessKey,function(){
 		  
 		  
 		  var customerName = $("#customerName").val() +" "+$("#customerFirstName").val()
@@ -132,7 +132,7 @@ ProcessFlowController.prototype.registerEventHandlers = function(){
               "v_customerEmail" : {"value" : $("#customerEmail").val(), "type": "String"},
               "v_customerPhone" : {"value" : $("#customerPhone").val(), "type": "String"},
               "v_customerAddress" : {"value" : $("#customerAddress").val(), "type": "String"},
-              "v_customerZip" : {"value" : $("#customerZip").val(), "type": "String"},
+              "v_customerZip" : {"value" : $("#customerZip").val(), "type": "Integer"},
               "v_customerID" : {"value" : $("#customerID").val(), "type": "Integer"},
 				
               "v_productDesc" : {"value" : productDesc, "type": "String"},

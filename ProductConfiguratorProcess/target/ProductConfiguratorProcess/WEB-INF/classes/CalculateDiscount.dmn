@@ -20,7 +20,7 @@
           <text>specialDiscount</text>
         </inputExpression>
       </input>
-      <output id="output_1" label="Discount" name="Discount" typeRef="double" />
+      <output id="output_1" label="Discount" name="discount" typeRef="double" />
       <rule id="DecisionRule_0b3x7z9">
         <description>20%</description>
         <inputEntry id="UnaryTests_1ki9qjg">

@@ -21,16 +21,20 @@ public class CreateOfferDelegate extends BaseDelegateClass implements JavaDelega
 		
 		OfferExchange newOffer = new OfferExchange();
 		
-		newOffer.setContact_id(execution.getVariable("customerID"));
-		newOffer.setDiscount(execution.getVariable("discount"));
-		newOffer.setPrice(execution.getVariable("v_productPrice"));
-		newOffer.setAmount(execution.getVariable("v_productAmount"));
-		newOffer.setPositions(execution.getVariable("v_productDesc"));
+		
+		
+		newOffer.setContact_id((int) execution.getVariable("customerID"));
+		newOffer.setDiscount((double) execution.getVariable("discount"));
+		newOffer.setPrice((int) execution.getVariable("v_productPrice"));
+		newOffer.setAmount((int) execution.getVariable("v_productAmount"));
+		newOffer.setPositions((String) execution.getVariable("v_productDesc"));
 		
 		
 		
 		returnedOffer = createNewOffer(newOffer);
 		
+		execution.setVariable("TotalPrice", returnedOffer.getPrice());
+		execution.setVariable("offerID", returnedOffer.getId());
 		
 	}
 	

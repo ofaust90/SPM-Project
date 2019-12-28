@@ -77,6 +77,7 @@ CamundaManager.prototype.sendMessage = function(msgName, processVariables, callb
             "messageName" : msgName,
             "businessKey" : $processFlowController.businessKey,
             "processInstanceId": _this.processInstanceID,
+        	"all" : true,
             processVariables
           };
 

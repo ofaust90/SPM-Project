@@ -1,7 +1,7 @@
-/Users/Carlo/Documents/GitHub/SPM-Project/ProductConfiguratorProcess/src/main/java/com/camunda/esi/project/ProductConfiguratorProcess/CreateLeadDelegate.java
-/Users/Carlo/Documents/GitHub/SPM-Project/ProductConfiguratorProcess/src/main/java/com/camunda/esi/project/ProductConfiguratorProcess/model/CustomerExchange.java
-/Users/Carlo/Documents/GitHub/SPM-Project/ProductConfiguratorProcess/src/main/java/com/camunda/esi/project/ProductConfiguratorProcess/model/OfferExchange.java
-/Users/Carlo/Documents/GitHub/SPM-Project/ProductConfiguratorProcess/src/main/java/com/camunda/esi/project/ProductConfiguratorProcess/CamundaBpmProcessApplication.java
-/Users/Carlo/Documents/GitHub/SPM-Project/ProductConfiguratorProcess/src/main/java/com/camunda/esi/project/ProductConfiguratorProcess/LoggerDelegate.java
-/Users/Carlo/Documents/GitHub/SPM-Project/ProductConfiguratorProcess/src/main/java/com/camunda/esi/project/ProductConfiguratorProcess/CreateOfferDelegate.java
-/Users/Carlo/Documents/GitHub/SPM-Project/ProductConfiguratorProcess/src/main/java/com/camunda/esi/project/ProductConfiguratorProcess/BaseDelegateClass.java
+/Users/oliverfaust/eclipse-workspace/SPM/ProductConfiguratorProcess/src/main/java/com/camunda/esi/project/ProductConfiguratorProcess/model/CustomerExchange.java
+/Users/oliverfaust/eclipse-workspace/SPM/ProductConfiguratorProcess/src/main/java/com/camunda/esi/project/ProductConfiguratorProcess/CreateLeadDelegate.java
+/Users/oliverfaust/eclipse-workspace/SPM/ProductConfiguratorProcess/src/main/java/com/camunda/esi/project/ProductConfiguratorProcess/CreateOfferDelegate.java
+/Users/oliverfaust/eclipse-workspace/SPM/ProductConfiguratorProcess/src/main/java/com/camunda/esi/project/ProductConfiguratorProcess/CamundaBpmProcessApplication.java
+/Users/oliverfaust/eclipse-workspace/SPM/ProductConfiguratorProcess/src/main/java/com/camunda/esi/project/ProductConfiguratorProcess/BaseDelegateClass.java
+/Users/oliverfaust/eclipse-workspace/SPM/ProductConfiguratorProcess/src/main/java/com/camunda/esi/project/ProductConfiguratorProcess/LoggerDelegate.java
+/Users/oliverfaust/eclipse-workspace/SPM/ProductConfiguratorProcess/src/main/java/com/camunda/esi/project/ProductConfiguratorProcess/model/OfferExchange.java

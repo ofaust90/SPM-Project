@@ -8,6 +8,7 @@
     <properties>
       <property name="isDeleteUponUndeploy">false</property>
       <property name="isScanForProcessDefinitions">true</property>
+        <property name="additionalResourceSuffixes">html,js</property>
     </properties>
   </process-archive>
 
