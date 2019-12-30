@@ -17,7 +17,7 @@
           <text>ZIPCode</text>
         </inputExpression>
       </input>
-      <output id="output_1" label="Risk" name="Risk" typeRef="string" />
+      <output id="output_1" label="Risk" name="offerRisk" typeRef="string" />
       <rule id="DecisionRule_189re5t">
         <description>high risk</description>
         <inputEntry id="UnaryTests_0qfpeau">
