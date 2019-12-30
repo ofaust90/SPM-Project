@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" id="Definitions_0o0pfxx" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.0.0-beta.2">
-  <decision id="CalculateDiscount" name="Calculate Discount">
+  <decision id="calculateDiscount" name="Calculate Discount">
     <decisionTable id="decisionTable_1" hitPolicy="FIRST">
       <input id="input_1" label="Customer Type">
         <inputExpression id="inputExpression_1" typeRef="string">

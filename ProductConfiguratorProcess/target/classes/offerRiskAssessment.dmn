@@ -4,12 +4,12 @@
     <decisionTable id="decisionTable_1" hitPolicy="FIRST">
       <input id="input_1" label="Customer Type">
         <inputExpression id="inputExpression_1" typeRef="string">
-          <text>CustomerType</text>
+          <text>customerType</text>
         </inputExpression>
       </input>
       <input id="InputClause_11rkt59" label="Total Price">
         <inputExpression id="LiteralExpression_0qivuqo" typeRef="integer">
-          <text>TotalPrice</text>
+          <text>totalPrice</text>
         </inputExpression>
       </input>
       <input id="InputClause_1tpxnv5" label="ZIP Code">
