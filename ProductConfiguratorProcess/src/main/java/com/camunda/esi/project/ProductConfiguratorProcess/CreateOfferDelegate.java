@@ -33,7 +33,7 @@ public class CreateOfferDelegate extends BaseDelegateClass implements JavaDelega
 		
 		returnedOffer = createNewOffer(newOffer);
 		
-		execution.setVariable("totalPrice", returnedOffer.getPrice());
+		execution.setVariable("totalPrice", (int) returnedOffer.getTotal_price());
 		execution.setVariable("offerID", returnedOffer.getId());
 		
 	}

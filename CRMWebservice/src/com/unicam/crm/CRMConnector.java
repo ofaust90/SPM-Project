@@ -5,6 +5,7 @@ import com.unicam.rest.model.Customer;
 import com.unicam.rest.model.CustomerExchange;
 import com.unicam.rest.model.Offer;
 import com.unicam.rest.model.OfferExchange;
+import com.unicam.rest.model.OfferSendExchange;
 
 public interface CRMConnector {
 	
@@ -22,7 +23,7 @@ public interface CRMConnector {
 	
 	public boolean acceptOffer(int id);
 	
-	public boolean sendOffer(int id, String email);
+	public boolean sendOffer(int id, OfferSendExchange sendExchange);
 	
 	public Offer offerMapper(OfferExchange o);
 	

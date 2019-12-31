@@ -69,18 +69,20 @@ CamundaManager.prototype.startProcess = function(processKey, businessKey, callba
 
 }
 
-CamundaManager.prototype.sendMessage = function(msgName, processVariables, callback){
+CamundaManager.prototype.sendMessage = function(msgName, processVariables, requestBody, callback){
   var _this  = this;
   //send msg to waiting catching msg event
   var requestURLResource = "message";
-  var  requestBody =     {
+  
+   requestBody =     {
             "messageName" : msgName,
             "businessKey" : $processFlowController.businessKey,
             "processInstanceId": _this.processInstanceID,
         	"all" : true,
             processVariables
           };
-
+  
+  
   _this.ajaxHelper.postData(requestURLResource, requestBody, function(response) {
         console.log("msg sent");
 
@@ -96,6 +98,31 @@ CamundaManager.prototype.sendMessage = function(msgName, processVariables, callb
           }
         }
   });
+
+
+}
+
+CamundaManager.prototype.sendCustomMessage = function(requestBody, callback){
+	  var _this  = this;
+	  //send msg to waiting catching msg event
+	  var requestURLResource = "message";
+	  
+	  
+	  _this.ajaxHelper.postData(requestURLResource, requestBody, function(response) {
+	        console.log("msg sent");
+
+
+	        if(callback != undefined){
+	          callback();
+	        }
+
+	        if(response != undefined)
+	        {
+	          if(response.type == "RestException"){
+	            alert("Rest Exception!");
+	          }
+	        }
+	  });
 
 
 }

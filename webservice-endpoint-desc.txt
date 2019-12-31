@@ -1,0 +1,103 @@
+Headers:
+Accept  application/json
+Content-Type  application/json
+
+bexio.com
+oliver.faust@stundents.fhnw.ch
+Camerino2019
+
+########Add new customer #############################
+
+POST:
+http://localhost:8080/CRMWebservice/rest/customer/add
+resource path e.g.: customer/add
+
+body:
+{
+	"name": "Hansli",
+    "familyname": "mueller",
+    "address": "Alte Jonastrasse 24",
+    "city": "Basel",
+    "customerType": "A",
+    "email": "support@bexio.com",
+    "postcode": 4052
+
+
+}
+
+Returns: CustomerExchange
+
+########Get exisiting customer #############################
+
+GET:
+http://localhost:8080/CRMWebservice/rest/customer/{id}/get
+resource path e.g.: customer/2/get
+
+Returns: CustomerExchange
+
+######## create new offer:#############################
+
+POST:
+http://localhost:8080/CRMWebservice/rest/offer/create
+resource path e.g.:: offer/create
+
+body:
+{
+    "id": "",
+    "contact_id": "25",
+    "positions": "laptop 15 zoll cpu",
+    "price" : 100,
+    "discount" : 12,
+    "amount" : 10
+}
+
+price = unit price
+positions = string with the description of the product
+contact_id = customer id
+amount = how many laptops ordered
+
+
+Returns: OfferExchange
+
+######## accept offer:#############################
+
+POST:
+http://localhost:8080/CRMWebservice/rest/offer/{id}/accept
+resource path e.g.: offer/1/accept
+
+Body:
+empty!
+
+Returns: Boolean indicating if it worked
+
+######## send offer via email:#############################
+POST:
+http://localhost:8080/CRMWebservice/rest/offer/{id}/send
+resource path e.g.: offer/1/send
+
+body:
+Plain string with email address to send offer to. (e.g. "oliversimon.faust@studenti.unicam.it")
+
+Returns: Boolean indicating if it worked
+
+
+######## create invoice from offer :#############################
+
+POST:
+http://localhost:8080/CRMWebservice/rest/offer/{id}/createinvoice
+resource path e.g.: offer/1/createinvoice
+
+body: empty
+OFFER HAS TO BE ACCEPTED BEFORE THIS STEP CAN BE PERFORMED
+
+Returns: Integer with generated invoice id
+
+######### send invoice via email #############################
+POST:
+http://localhost:8080/CRMWebservice/rest/offer/{id}/invoice/send
+resource path e.g.: offer/1/invoice/send
+
+body:
+Plain string with email address to send offer to. (e.g. "oliversimon.faust@studenti.unicam.it")
+
+Returns: Boolean indicating if it worked

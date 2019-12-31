@@ -68,6 +68,7 @@ public class CreateLeadDelegate extends BaseDelegateClass implements JavaDelegat
 		
 		execution.setVariable("specialDiscount", false);
 	
+		execution.setVariable("customerObject", returnedCustomer);
 		
 
 	}

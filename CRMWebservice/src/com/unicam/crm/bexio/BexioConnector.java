@@ -28,6 +28,7 @@ import com.unicam.rest.model.Customer;
 import com.unicam.rest.model.CustomerExchange;
 import com.unicam.rest.model.Offer;
 import com.unicam.rest.model.OfferExchange;
+import com.unicam.rest.model.OfferSendExchange;
 
 
 
@@ -310,6 +311,9 @@ public class BexioConnector implements CRMConnector{
 		oe.setPrice(bexPos.getUnit_price());
 		oe.setDiscount(bexPos.getDiscount_in_percent());
 		oe.setAmount((int) bexPos.getAmount());
+		
+		oe.setTotal_price(((BexioOfferGet) crmOffer).getTotal());
+		
 		return oe;
 	}
 	
@@ -374,7 +378,7 @@ public class BexioConnector implements CRMConnector{
 	}
 
 	@Override
-	public boolean sendOffer(int id, String email) {
+	public boolean sendOffer(int id, OfferSendExchange sendExchange) {
 		
 
 		try {
@@ -383,16 +387,38 @@ public class BexioConnector implements CRMConnector{
 		//issue offer
 		String url = "kb_offer/"+idStr+"/issue";
 		this.post(url,"");
+	
 		
 		//send offer
 		String urlSend = "kb_offer/"+idStr+"/send";
 		
+		/*
+		 // base url
+	    String baseURL = "http://localhost:8080/ProductConfiguratorWebsite/WebContent/offer.html?q=";
+
+	    // query string
+	    String query = "Dankeschön für Ihre €100";
+
+	    // URL encode query string
+	    String encodeStr = URLEncoder.encode(query, StandardCharsets.UTF_8.name());
+
+	    // final url
+	    String url = baseURL + encodeStr;
+
+	    // print the url
+	    System.out.println(url);
+		
+		*/
+		
+		
 		String msgbody = "{\n" + 
-				"  \"recipient_email\": " + email +",\n" + 
+				"  \"recipient_email\": \"" + sendExchange.getEmail() +"\",\n" + 
 				"  \"subject\": \"Your Offer\",\n" + 
-				"  \"message\": \"Dear Customer, please find your offer follwing this link: [Network Link]\"\n" + 
+				"  \"message\": \"Dear Customer, please find your offer follwing this link: http://localhost:8080/ProductConfiguratorWebsite/WebContent/offer.html?businessKey="+sendExchange.getBusinessKey()+"&id="+idStr+"&link=[Network Link]\"\n" + 
 				"}";
-	System.out.println("body: "+msgbody);
+				
+				
+		System.out.println("body: "+msgbody);
 		
 		this.post(urlSend,msgbody);
 		

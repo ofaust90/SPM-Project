@@ -13,6 +13,7 @@ import com.unicam.crm.CRMConnector;
 import com.unicam.crm.CRMConnectorFactory;
 import com.unicam.rest.model.EmailExchange;
 import com.unicam.rest.model.OfferExchange;
+import com.unicam.rest.model.OfferSendExchange;
 
 @Path("/offer")
 public class CRMOfferServiceImpl implements CRMOfferService {
@@ -42,12 +43,10 @@ public class CRMOfferServiceImpl implements CRMOfferService {
 	@Override
 	@POST
 	@Path("/{id}/send")
-	public boolean sendOffer(@PathParam("id")int id, String email) {
-		//issue 
-		//send 
+	public boolean sendOffer(@PathParam("id")int id, OfferSendExchange sendExchange) {
 		
 		
-		return crm.sendOffer(id,email);
+		return crm.sendOffer(id,sendExchange);
 	}
 
 	@Override

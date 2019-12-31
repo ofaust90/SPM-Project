@@ -11,6 +11,7 @@ public class OfferExchange implements Offer {
 	private double price;
 	private double discount;
 	private int amount;
+	private double total_price;
 	//private String positions;
 	
 	
@@ -49,6 +50,12 @@ public class OfferExchange implements Offer {
 	}
 	public void setAmount(int amount) {
 		this.amount = amount;
+	}
+	public double getTotal_price() {
+		return total_price;
+	}
+	public void setTotal_price(double total_price) {
+		this.total_price = total_price;
 	}
 	
 	
