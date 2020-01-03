@@ -32,6 +32,6 @@ public interface CRMConnector {
 	//Invoice
 	public int createInvoiceFromOffer(int id);
 	
-	public boolean sendInvoice(int id, String email);
+	public boolean sendInvoice(int id,OfferSendExchange sendExchange);
 	
 }

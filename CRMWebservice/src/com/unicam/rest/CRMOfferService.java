@@ -14,6 +14,6 @@ public interface CRMOfferService {
 	
 	public int createInvoiceFromOffer(int id);
 	
-	public boolean sendInvoice(int id, String email);
+	public boolean sendInvoice(int id, OfferSendExchange sendExchange);
 
 }

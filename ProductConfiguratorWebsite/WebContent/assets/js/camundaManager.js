@@ -69,7 +69,7 @@ CamundaManager.prototype.startProcess = function(processKey, businessKey, callba
 
 }
 
-CamundaManager.prototype.sendMessage = function(msgName, processVariables, requestBody, callback){
+CamundaManager.prototype.sendMessage = function(msgName, processVariables, callback){
   var _this  = this;
   //send msg to waiting catching msg event
   var requestURLResource = "message";
