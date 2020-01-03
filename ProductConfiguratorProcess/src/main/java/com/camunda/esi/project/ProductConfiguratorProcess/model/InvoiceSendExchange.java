@@ -1,7 +1,7 @@
 package com.camunda.esi.project.ProductConfiguratorProcess.model;
 
-public class OfferSendExchange {
-
+public class InvoiceSendExchange {
+	
 	private String email;
 	private String businessKey;
 	
@@ -18,5 +18,5 @@ public class OfferSendExchange {
 		this.businessKey = businessKey;
 	}
 	
-	
+
 }
