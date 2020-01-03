@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="com.camunda.esi.project.ProductConfiguratorProcess.ProcessUnitTest" time="0.87" errors="0" skipped="0">
+
+<testsuite tests="2" failures="0" name="com.camunda.esi.project.ProductConfiguratorProcess.ProcessUnitTest" time="0.712" errors="0" skipped="0">
+>>>>>>> 8b6e0c24895920ea2e0605d039e38641ecfccd8b
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib"/>
     <property name="java.vm.version" value="25.201-b09"/>
     <property name="gopherProxySet" value="false"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="/Users/Carlo/Documents/GitHub/SPM-Project/ProductConfiguratorProcess"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/oliverfaust/eclipse-workspace/SPM/ProductConfiguratorProcess"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=":"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -16,31 +18,33 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/Users/Carlo/Documents/GitHub/SPM-Project/ProductConfiguratorProcess"/>
+    <property name="user.dir" value="/Users/oliverfaust/eclipse-workspace/SPM/ProductConfiguratorProcess"/>
     <property name="java.runtime.version" value="1.8.0_201-b09"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/endorsed"/>
     <property name="os.arch" value="x86_64"/>
-    <property name="java.io.tmpdir" value="/var/folders/8r/6f58d11s65d574lngzjfzkz40000gn/T/"/>
+    <property name="java.io.tmpdir" value="/var/folders/x5/0fz1rq7j3gq6r7h4kd9x6c400000gn/T/"/>
     <property name="line.separator" value="
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/Users/Carlo/Documents/_FHNW/Camerino/Enterprise Software Infrastructure/ESI Project/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf1908181895781037794.tmp"/>
+
+    <property name="classworlds.conf" value="/Users/oliverfaust/eclipse-workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf4564397780625254746.tmp"/>
+>>>>>>> 8b6e0c24895920ea2e0605d039e38641ecfccd8b
     <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.library.path" value="/Users/Carlo/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.library.path" value="/Users/oliverfaust/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="10.15"/>
+    <property name="os.version" value="10.15.2"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
-    <property name="user.home" value="/Users/Carlo"/>
+    <property name="user.home" value="/Users/oliverfaust"/>
     <property name="user.timezone" value="Europe/Zurich"/>
     <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
     <property name="java.specification.version" value="1.8"/>
     <property name="file.encoding" value="UTF-8"/>
-    <property name="user.name" value="Carlo"/>
-    <property name="java.class.path" value="/Applications/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.13.0.20190716-1623/jars/plexus-classworlds-2.6.0.jar"/>
+    <property name="user.name" value="oliverfaust"/>
+    <property name="java.class.path" value="/Users/oliverfaust/.p2/pool/plugins/org.eclipse.m2e.maven.runtime_1.10.0.20181127-2120/jars/plexus-classworlds-2.5.2.jar"/>
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre"/>
@@ -50,10 +54,10 @@
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
     <property name="java.vm.info" value="mixed mode"/>
     <property name="java.version" value="1.8.0_201"/>
-    <property name="java.ext.dirs" value="/Users/Carlo/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="java.ext.dirs" value="/Users/oliverfaust/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
     <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/classes"/>
     <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="maven.home" value="/Users/Carlo/Documents/GitHub/SPM-Project/ProductConfiguratorProcess/EMBEDDED"/>
+    <property name="maven.home" value="/Users/oliverfaust/eclipse-workspace/SPM/ProductConfiguratorProcess/EMBEDDED"/>
     <property name="file.separator" value="/"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -62,6 +66,8 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.camunda.esi.project.ProductConfiguratorProcess.ProcessUnitTest" name="testParsingAndDeployment" time="0.696"/>
-  <testcase classname="com.camunda.esi.project.ProductConfiguratorProcess.ProcessUnitTest" name="testHappyPath" time="0.174"/>
+
+  <testcase classname="com.camunda.esi.project.ProductConfiguratorProcess.ProcessUnitTest" name="testParsingAndDeployment" time="0.57"/>
+  <testcase classname="com.camunda.esi.project.ProductConfiguratorProcess.ProcessUnitTest" name="testHappyPath" time="0.142"/>
+>>>>>>> 8b6e0c24895920ea2e0605d039e38641ecfccd8b
 </testsuite>

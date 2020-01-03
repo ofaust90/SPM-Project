@@ -68,10 +68,10 @@ public class CRMOfferServiceImpl implements CRMOfferService {
 	@Override
 	@POST
 	@Path("/{id}/invoice/send")
-	public boolean sendInvoice(@PathParam("id")int id, String email) {
+	public boolean sendInvoice(@PathParam("id")int id, OfferSendExchange sendExchange) {
 		
 		
-		return crm.sendInvoice(id,email);
+		return crm.sendInvoice(id,sendExchange);
 	}
 
 }

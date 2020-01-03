@@ -84,8 +84,8 @@ Returns: Boolean indicating if it worked
 ######## create invoice from offer :#############################
 
 POST:
-http://localhost:8080/CRMWebservice/rest/offer/{id}/createinvoice
-resource path e.g.: offer/1/createinvoice
+http://localhost:8080/CRMWebservice/rest/offer/{id}/invoice
+resource path e.g.: offer/1/invoice
 
 body: empty
 OFFER HAS TO BE ACCEPTED BEFORE THIS STEP CAN BE PERFORMED

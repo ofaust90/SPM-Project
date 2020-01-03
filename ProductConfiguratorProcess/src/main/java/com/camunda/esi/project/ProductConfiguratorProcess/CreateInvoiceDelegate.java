@@ -21,7 +21,7 @@ public class CreateInvoiceDelegate extends BaseDelegateClass implements JavaDele
 	
 	public int createInvoice(int id) {
 			
-		return Integer.parseInt(this.post("offer/"+id+"/createinvoice","")) ;
+		return Integer.parseInt(this.post("offer/"+id+"/invoice","")) ;
 			
 	}
 	

@@ -28,7 +28,7 @@ public class SendInvoiceDelegate extends BaseDelegateClass implements JavaDelega
 		OfferSendExchange exchange = new OfferSendExchange();
 		exchange.setBusinessKey(businessKey);
 		exchange.setEmail(email);
-		
+	
 		
 		String jsonInString;
 		try {

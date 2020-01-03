@@ -469,7 +469,7 @@ public class BexioConnector implements CRMConnector{
 	}
 
 	@Override
-	public boolean sendInvoice(int id, String email) {
+	public boolean sendInvoice(int id, OfferSendExchange sendExchange) {
 		
 
 		try {
@@ -483,7 +483,7 @@ public class BexioConnector implements CRMConnector{
 		String urlSend = "kb_invoice/"+idStr+"/send";
 		
 		String msgbody = "{\n" + 
-				"  \"recipient_email\": " + email +",\n" + 
+				"  \"recipient_email\":  \"" + sendExchange.getEmail() +"\",\n" + 
 				"  \"subject\": \"Your Email\",\n" + 
 				"  \"message\": \"Dear Customer, please find your Inovice follwing this link: [Network Link]\"\n" + 
 				"}";
