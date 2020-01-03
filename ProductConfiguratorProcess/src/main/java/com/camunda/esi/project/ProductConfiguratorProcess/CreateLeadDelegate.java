@@ -83,6 +83,9 @@ public class CreateLeadDelegate extends BaseDelegateClass implements JavaDelegat
 			
 			//define resource path and call get method
 			String customerJson = get("customer/"+id+"/get");
+			System.out.println("###################################################");
+			System.out.println(customerJson);
+			
 			
 			//convert json string into exchange object
 			CustomerExchange customer = mapper.readValue(customerJson, CustomerExchange.class);
