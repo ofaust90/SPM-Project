@@ -34,6 +34,25 @@ ProcessFlowController.prototype.registerEventHandlers = function(){
   console.log("start registering eventhandlers");
   var _this = this;
 
+  
+  $("#newCu").on("click", function(){
+	  $("#selectDiv").addClass("hidden");
+
+	  $("#new").removeClass("hidden");
+	  $("#startFormDiv").removeClass("hidden");
+	  
+	  
+  });
+  
+  $("#existingCu").on("click", function(){
+	  $("#selectDiv").addClass("hidden");
+
+	  $("#existing").removeClass("hidden");
+	  $("#startFormDiv").removeClass("hidden");
+	  
+	  
+  });
+
 
   $("#startFormBtn").on("click", function(){
 

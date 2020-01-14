@@ -45,6 +45,14 @@
           <div class="col-md-12">
 
             <h1>Welcome to the Laptop wholesale product configurator</h1>
+           	
+           	<div id="selectDiv">
+            <input type="button" class="btn btn-default" id="newCu" value="I am new!">
+       	 	<input type="button" class="btn btn-default" id="existingCu" value="I am an exisiting Customer!">
+       	
+           	</div>
+           
+            <div id="new" class="hidden">
             <p>Please provide us with some information to your request to start the product configurator</p>
             <form>
               <div class="form-group">
@@ -82,21 +90,28 @@
                 <input type="text" class="form-control" id="customerZip" aria-describedby="nameHelp" placeholder="Enter your Zip">
                 <small id="zipHelp" class="form-text text-muted">Please provide your zip.</small>
               </div>
-              
-              <h3>Or add existing Customer ID:</h3>
+              </form>
+              </div>
+               
+              <div id="existing" class="hidden">
+              <h3>Your existing Customer ID:</h3>
+              <form>
               <div class="form-group">
                 <label for="name">Existing Customer ID</label>
                 <input type="text" class="form-control" id="customerID" aria-describedby="nameHelp" placeholder="Enter your Customer ID" value="0">
                 <small id="idHelp" class="form-text text-muted">Please provide your customer id that we can identify your request.</small>
               </div>
+              </form>
+              </div>
             
-
-
+			<div id="startFormDiv" class="hidden">	
+			 <form>
               <input type="button" class="btn btn-default" id="startFormBtn" value="Start Configurator!">
-            </form>
+           </form>
+            
           </div>
         </div>
-
+</div>
          
         <!---product conf Form-->
         <div  id="productForm" class="row hidden">
