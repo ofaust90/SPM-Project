@@ -133,11 +133,13 @@ ProcessFlowController.prototype.registerEventHandlers = function(){
               "v_customerPhone" : {"value" : $("#customerPhone").val(), "type": "String"},
               "v_customerAddress" : {"value" : $("#customerAddress").val(), "type": "String"},
               "v_customerZip" : {"value" : $("#customerZip").val(), "type": "Integer"},
+              "v_customerCity" : {"value" : $("#customerCity").val(), "type": "String"},
+              
               "v_customerID" : {"value" : $("#customerID").val(), "type": "Integer"},
 				
               "v_productDesc" : {"value" : productDesc, "type": "String"},
-              "v_productAmount" : {"value" : amount, "type": "Integer"}, 
-              "v_productPrice" : {"value" : price, "type": "Integer"},
+              "v_productAmount" : {"value" : amount, "type": "Long"}, 
+              "v_productPrice" : {"value" : price, "type": "Long"},
             
               "callbackRequested" : {"value" : $("#callbackRequested").prop("checked"), "type": "Boolean"}
               

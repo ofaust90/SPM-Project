@@ -9,6 +9,7 @@ import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
 
 import com.camunda.esi.project.ProductConfiguratorProcess.model.CustomerExchange;
+import com.camunda.esi.project.ProductConfiguratorProcess.model.Message;
 
 
 
@@ -45,6 +46,8 @@ public class CreateLeadDelegate extends BaseDelegateClass implements JavaDelegat
 			newCustomer.setAddress((String) execution.getVariable("v_customerAddress"));
 			newCustomer.setEmail((String) execution.getVariable("v_customerEmail"));
 			newCustomer.setPostcode((int) execution.getVariable("v_customerZip"));
+			newCustomer.setCity((String) execution.getVariable("v_customerCity"));
+			newCustomer.setPhone((String) execution.getVariable("v_customerPhone"));
 			newCustomer.setCustomerType("new");
 			//.... data should be retrieved from execution envoironemnt vars
 			
@@ -59,10 +62,14 @@ public class CreateLeadDelegate extends BaseDelegateClass implements JavaDelegat
 		
 		//store whatever you want in process variable
 		execution.setVariable("customerID", returnedCustomer.getId());
-		execution.setVariable("customerName", returnedCustomer.getName());
+		execution.setVariable("customerName", returnedCustomer.getFamilyname());
+		execution.setVariable("customerFirstName", returnedCustomer.getName());
 		execution.setVariable("customerEmail", returnedCustomer.getEmail());
-		execution.setVariable("ZIPCode", returnedCustomer.getPostcode());
-		execution.setVariable("numberOfItems", execution.getVariable("v_productAmount"));
+		execution.setVariable("customerPhone", returnedCustomer.getPhone());
+		execution.setVariable("customerZip", returnedCustomer.getPostcode());
+		execution.setVariable("customerAddress", returnedCustomer.getAddress());
+		execution.setVariable("customerCity", returnedCustomer.getCity());
+	//	execution.setVariable("productAmount", execution.getVariable("v_productAmount"));
 		execution.setVariable("callbackRequested", execution.getVariable("callbackRequested"));
 		execution.setVariable("customerType", returnedCustomer.getCustomerType());
 		
@@ -71,6 +78,7 @@ public class CreateLeadDelegate extends BaseDelegateClass implements JavaDelegat
 		execution.setVariable("customerObject", returnedCustomer);
 		
 
+	
 	}
 	
 	
@@ -83,9 +91,6 @@ public class CreateLeadDelegate extends BaseDelegateClass implements JavaDelegat
 			
 			//define resource path and call get method
 			String customerJson = get("customer/"+id+"/get");
-			System.out.println("###################################################");
-			System.out.println(customerJson);
-			
 			
 			//convert json string into exchange object
 			CustomerExchange customer = mapper.readValue(customerJson, CustomerExchange.class);

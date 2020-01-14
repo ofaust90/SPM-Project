@@ -12,6 +12,8 @@ public interface CRMOfferService {
 	
 	public boolean acceptOffer(int id);
 	
+	public boolean declineOffer(int id);
+	
 	public int createInvoiceFromOffer(int id);
 	
 	public boolean sendInvoice(int id, OfferSendExchange sendExchange);

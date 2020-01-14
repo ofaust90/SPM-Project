@@ -23,6 +23,9 @@ public interface CRMConnector {
 	
 	public boolean acceptOffer(int id);
 	
+	public boolean declineOffer(int id);
+	
+	
 	public boolean sendOffer(int id, OfferSendExchange sendExchange);
 	
 	public Offer offerMapper(OfferExchange o);

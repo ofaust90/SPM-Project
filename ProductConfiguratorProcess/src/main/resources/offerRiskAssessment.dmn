@@ -14,7 +14,7 @@
       </input>
       <input id="InputClause_1tpxnv5" label="ZIP Code">
         <inputExpression id="LiteralExpression_02aud63" typeRef="integer">
-          <text>ZIPCode</text>
+          <text>customerZip</text>
         </inputExpression>
       </input>
       <output id="output_1" label="Risk" name="offerRisk" typeRef="string" />
@@ -24,7 +24,7 @@
           <text>"A"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0iki5on">
-          <text>&gt;5000</text>
+          <text>&gt;80000</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ukhal0">
           <text>-</text>
@@ -39,7 +39,7 @@
           <text>"B"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1asuch1">
-          <text>&gt;2000</text>
+          <text>&gt;50000</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ooy83y">
           <text></text>
@@ -54,10 +54,10 @@
           <text>"C"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0gg40pz">
-          <text>&gt;500</text>
+          <text>&gt;30000</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0hydgoi">
-          <text>[8000..9000]</text>
+          <text>-</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0wahdvz">
           <text>"high"</text>
@@ -69,7 +69,7 @@
           <text>"new"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0cv6y2e">
-          <text>&gt;1000</text>
+          <text>&gt;10000</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1bwfz50">
           <text></text>
@@ -79,17 +79,32 @@
         </outputEntry>
       </rule>
       <rule id="DecisionRule_157a3j7">
-        <description>low risk</description>
+        <description>high risk</description>
         <inputEntry id="UnaryTests_12fkjt8">
-          <text></text>
+          <text>"new"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1gc5ns3">
-          <text></text>
+          <text>&gt;5000</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0jnbrw8">
-          <text></text>
+          <text>[8000..9000]</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vpc9ls">
+          <text>"high"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1xghnx7">
+        <description>low risk</description>
+        <inputEntry id="UnaryTests_0kjcljz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_053m2s0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09gezkh">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0n2inw5">
           <text>"low"</text>
         </outputEntry>
       </rule>

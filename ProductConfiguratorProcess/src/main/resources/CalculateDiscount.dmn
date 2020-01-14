@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" id="Definitions_0o0pfxx" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.0.0-beta.2">
-  <decision id="calculateDiscount" name="Calculate Discount">
+  <decision id="CalculateDiscountNew" name="Calculate Discount">
     <decisionTable id="decisionTable_1" hitPolicy="FIRST">
       <input id="input_1" label="Customer Type">
         <inputExpression id="inputExpression_1" typeRef="string">
@@ -12,7 +12,7 @@
       </input>
       <input id="InputClause_1lfqaov" label="Number of items">
         <inputExpression id="LiteralExpression_1yoasv4" typeRef="integer">
-          <text>numberOfItems</text>
+          <text>v_productAmount</text>
         </inputExpression>
       </input>
       <input id="InputClause_1b38bqv" label="Special Discount granted by Sales">
@@ -258,6 +258,20 @@
         </inputEntry>
         <outputEntry id="LiteralExpression_1q6vbgj">
           <text>0</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1u9eb30">
+        <inputEntry id="UnaryTests_0gsmmd5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xf3y0g">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16hwdxa">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ktu9w4">
+          <text></text>
         </outputEntry>
       </rule>
     </decisionTable>

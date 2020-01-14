@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.camunda.esi.project.ProductConfiguratorProcess.ProcessUnitTest
 -------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.979 sec
-=======
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.148 sec
->>>>>>> 8b6e0c24895920ea2e0605d039e38641ecfccd8b
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.122 sec

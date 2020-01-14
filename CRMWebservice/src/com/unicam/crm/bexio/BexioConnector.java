@@ -36,10 +36,10 @@ public class BexioConnector implements CRMConnector{
 	
 	
 	private final  String BASE_URL = "https://office.bexio.com/api2.php/";
-	private final String COMPANY_ID = "eocsqx9ue67h";
+	private final String COMPANY_ID = "lgqyjffw2bna";
 	private final String USER_ID = "1";
-	private final String PUBLIC_KEY = "f58965246a814b51e23e4602fa762fb4";
-	private final String SIGNATURE_KEY = "4c9ac6c3fec271fb91cb4d3efa548b7c";
+	private final String PUBLIC_KEY = "7dfdb2b54598f20fd51095b6ab6b1300";
+	private final String SIGNATURE_KEY = "d780393b3be0c82ba7e856f3526e9937";
 	private String companyBexioURL;
 	
 	static ObjectMapper mapper = new ObjectMapper();
@@ -175,13 +175,14 @@ public class BexioConnector implements CRMConnector{
 	public Customer customerMapper(CustomerExchange c) {
 		
 		BexioContact bc = new BexioContact();
-		bc.setName_1(c.getName());
-		bc.setName_2(c.getFamilyname());
+		bc.setName_2(c.getName());
+		bc.setName_1(c.getFamilyname());
 		bc.setAddress(c.getAddress());
 		bc.setCity(c.getCity());
 		bc.setMail(c.getEmail());
 		bc.setRemarks(c.getCustomerType());
 		bc.setPostcode(String.valueOf(c.getPostcode()));
+		bc.setPhone_fixed(c.getPhone());
 		
 		
 		return bc;
@@ -196,12 +197,13 @@ public class BexioConnector implements CRMConnector{
 		
 		CustomerExchange ce = new CustomerExchange();
 		ce.setId(((BexioContactGet) crmCustomer).getId());
-		ce.setName(((BexioContactGet) crmCustomer).getName_1());
-		ce.setFamilyname(((BexioContactGet) crmCustomer).getName_2());
+		ce.setName(((BexioContactGet) crmCustomer).getName_2());
+		ce.setFamilyname(((BexioContactGet) crmCustomer).getName_1());
 		ce.setAddress(((BexioContactGet) crmCustomer).getAddress());
 		ce.setCity(((BexioContactGet) crmCustomer).getCity());
 		ce.setCustomerType(((BexioContactGet) crmCustomer).getRemarks());
 		ce.setEmail(((BexioContactGet) crmCustomer).getMail());
+		ce.setPhone(((BexioContactGet) crmCustomer).getPhone_fixed());
 		String strPostcode = ((BexioContactGet) crmCustomer).getPostcode();
 		if(strPostcode.length() > 0) {
 			ce.setPostcode(Integer.parseInt(strPostcode));
@@ -352,6 +354,9 @@ public class BexioConnector implements CRMConnector{
 		
 		return null;
 	}
+	
+
+	
 
 	@Override
 	public boolean acceptOffer(int id) {
@@ -364,6 +369,31 @@ public class BexioConnector implements CRMConnector{
 			String response = this.post(url,"");
 			
 			String result = "Offer accepted  response: "+response;
+			System.out.println(result);
+			
+			}catch(Exception ex) {
+				
+				return false;
+			}
+			return true;//Response.status(201).entity(contact).build();
+	
+		
+		
+		
+	}
+	
+
+	@Override
+	public boolean declineOffer(int id) {
+		
+	
+			try {
+			String idStr = Integer.toString(id);
+			String url = "kb_offer/"+idStr+"/reject";
+			
+			String response = this.post(url,"");
+			
+			String result = "Offer rejected  response: "+response;
 			System.out.println(result);
 			
 			}catch(Exception ex) {
@@ -499,7 +529,7 @@ public class BexioConnector implements CRMConnector{
 		}
 		return true;
 	}
-	
+
 	
 
 

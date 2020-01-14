@@ -24,6 +24,7 @@ public class BexioContact implements Customer {
 	private String remarks; //serves as customer type identifier
 	private String mail;
 	private String postcode;
+	private String phone_fixed;
 	
 	
 	
@@ -106,6 +107,14 @@ public class BexioContact implements Customer {
 
 	public void setPostcode(String postcode) {
 		this.postcode = postcode;
+	}
+
+	public String getPhone_fixed() {
+		return phone_fixed;
+	}
+
+	public void setPhone_fixed(String phone_fixed) {
+		this.phone_fixed = phone_fixed;
 	}
 	
 	

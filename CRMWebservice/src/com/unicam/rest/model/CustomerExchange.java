@@ -15,6 +15,7 @@ public class CustomerExchange implements Customer {
 	private String city;
 	private String customerType; 
 	private String email;
+	private String phone;
 	private int postcode;
 	
 	
@@ -84,7 +85,14 @@ public class CustomerExchange implements Customer {
 		this.postcode = postcode;
 	}
 
-	
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
 	
 	
 	

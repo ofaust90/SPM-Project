@@ -12,7 +12,7 @@ public class OfferExchange {
 	private String positions;
 	private double price;
 	private double discount;
-	private int amount;
+	private long amount;
 	private double total_price;
 	
 	
@@ -47,10 +47,10 @@ public class OfferExchange {
 	public void setDiscount(double discount) {
 		this.discount = discount;
 	}
-	public int getAmount() {
+	public long getAmount() {
 		return amount;
 	}
-	public void setAmount(int amount) {
+	public void setAmount(long amount) {
 		this.amount = amount;
 	}
 	

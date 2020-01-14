@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 
+import com.camunda.esi.project.ProductConfiguratorProcess.model.Message;
 import com.camunda.esi.project.ProductConfiguratorProcess.model.OfferSendExchange;
 
 public class SendInvoiceDelegate extends BaseDelegateClass implements JavaDelegate {
@@ -19,6 +20,13 @@ public class SendInvoiceDelegate extends BaseDelegateClass implements JavaDelega
 				
 		//call method to consume rest service
 		sendInvoice(invoiceID,email,businessKey);	
+		
+		Message camundaMsg = new Message();
+		camundaMsg.setAll(true);
+		camundaMsg.setBusinessKey((String)execution.getBusinessKey());
+		camundaMsg.setMessageName("invoice_sent");
+		
+		super.sendMessage(camundaMsg);
 			
 		}
 		
@@ -39,7 +47,9 @@ public class SendInvoiceDelegate extends BaseDelegateClass implements JavaDelega
 			e.printStackTrace();
 		}
 		
-	;
+		
+		
+	
 	}
 
 }

@@ -40,6 +40,10 @@ public class CRMOfferServiceImpl implements CRMOfferService {
 			return (OfferExchange) crm.addOffer(offer);
 	}
 
+	
+	
+	
+	
 	@Override
 	@POST
 	@Path("/{id}/send")
@@ -56,6 +60,18 @@ public class CRMOfferServiceImpl implements CRMOfferService {
 		
 		return crm.acceptOffer(id);
 	}
+	
+
+	
+	@Override
+	@POST
+	@Path("/{id}/decline")
+	public boolean declineOffer(@PathParam("id") int id) {
+		
+		return crm.declineOffer(id);
+	}
+	
+
 
 	@Override
 	@POST
@@ -74,4 +90,6 @@ public class CRMOfferServiceImpl implements CRMOfferService {
 		return crm.sendInvoice(id,sendExchange);
 	}
 
+	
+	
 }
