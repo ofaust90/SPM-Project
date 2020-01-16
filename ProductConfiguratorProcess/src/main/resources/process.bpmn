@@ -181,7 +181,11 @@
           </camunda:formField>
           <camunda:formField id="v_productDesc" label="Product" type="string" />
           <camunda:formField id="v_productAmount" label="Number of Items" type="long" />
-          <camunda:formField id="v_productPrice" label="Product Price" type="long" />
+          <camunda:formField id="v_productPrice" label="Product Price" type="long">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
           <camunda:formField id="totalPrice" label="Total Price" type="long" />
           <camunda:formField id="salemansNote" label="Notes" type="string" />
           <camunda:formField id="offer_status" label="Offer status" type="enum" defaultValue="e_declined">
@@ -284,11 +288,16 @@
           <camunda:formField id="customerFirstName" label="Contact Name" type="string" />
           <camunda:formField id="customerType" label="Customer Type" type="string" />
           <camunda:formField id="customerPhone" label="Phone" type="string" />
-          <camunda:formField id="specialDiscount" label="Special Discount" type="boolean" />
-          <camunda:formField id="v_productAmount" label="Number of Items" type="long" />
-          <camunda:formField id="v_productDesc" label="Order" type="string" />
-          <camunda:formField id="v_productPrice" label="Price" type="long" />
+          <camunda:formField id="v_productDesc" label="Order" type="long" />
+          <camunda:formField id="v_productAmount" label="Number of Items" type="string" />
+          <camunda:formField id="v_productPrice" label="Price per Unit" type="long">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="totalPrice" label="Total Price" type="long" />
           <camunda:formField id="salesMansNote" label="Notes" type="string" />
+          <camunda:formField id="specialDiscount" label="Additional 5% discount" type="boolean" />
         </camunda:formData>
       </bpmn:extensionElements>
       <bpmn:incoming>SequenceFlow_04uy4j3</bpmn:incoming>
@@ -311,7 +320,11 @@
           </camunda:formField>
           <camunda:formField id="v_productDesc" label="Ordered Product" type="string" />
           <camunda:formField id="v_productAmount" label="Number of items" type="long" />
-          <camunda:formField id="v_productPrice" label="Price per item" type="long" />
+          <camunda:formField id="v_productPrice" label="Price per item" type="long">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
           <camunda:formField id="totalPrice" label="Total Price" type="long" />
           <camunda:formField id="approveOffer" label="Approve Offer" type="enum" defaultValue="offer_approved">
             <camunda:value id="offer_approved" name="Current offer approved" />
