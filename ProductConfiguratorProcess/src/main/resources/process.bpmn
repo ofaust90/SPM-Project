@@ -288,8 +288,8 @@
           <camunda:formField id="customerFirstName" label="Contact Name" type="string" />
           <camunda:formField id="customerType" label="Customer Type" type="string" />
           <camunda:formField id="customerPhone" label="Phone" type="string" />
-          <camunda:formField id="v_productDesc" label="Order" type="long" />
-          <camunda:formField id="v_productAmount" label="Number of Items" type="string" />
+          <camunda:formField id="v_productDesc" label="Order" type="string" />
+          <camunda:formField id="v_productAmount" label="Number of Items" type="long" />
           <camunda:formField id="v_productPrice" label="Price per Unit" type="long">
             <camunda:validation>
               <camunda:constraint name="readonly" />
