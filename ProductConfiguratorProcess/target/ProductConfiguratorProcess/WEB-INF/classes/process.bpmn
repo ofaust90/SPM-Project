@@ -101,8 +101,8 @@
     <bpmn:sequenceFlow id="SequenceFlow_0s5580a" name="Yes" sourceRef="ExclusiveGateway_1k99yhu" targetRef="Task_1slsz47">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${offerRisk=="high"}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
-    <bpmn:sequenceFlow id="SequenceFlow_14xp3tp" sourceRef="ExclusiveGateway_0nz1qpe" targetRef="Task_0np7v3k">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${approveOffer=='offer_approved'}</bpmn:conditionExpression>
+    <bpmn:sequenceFlow id="SequenceFlow_14xp3tp" name="offer approved" sourceRef="ExclusiveGateway_0nz1qpe" targetRef="Task_0np7v3k">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${offerApproved==true}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="SequenceFlow_0tqk52f" sourceRef="Task_1slsz47" targetRef="ExclusiveGateway_0nz1qpe" />
     <bpmn:businessRuleTask id="Task_1vr0arz" name="Offer risk assessment" camunda:resultVariable="offerRisk" camunda:decisionRef="OfferRiskAssessment" camunda:mapDecisionResult="singleEntry">
@@ -191,7 +191,12 @@
           <camunda:formField id="offer_status" label="Offer status" type="enum" defaultValue="e_declined">
             <camunda:value id="e_accepted" name="accepted" />
             <camunda:value id="e_declined" name="declined" />
-            <camunda:value id="e_new_offer" />
+            <camunda:value id="e_new_offer" name="new offer " />
+          </camunda:formField>
+          <camunda:formField id="discount" label="Discount granted" type="long">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
           </camunda:formField>
         </camunda:formData>
       </bpmn:extensionElements>
@@ -288,15 +293,14 @@
           <camunda:formField id="customerFirstName" label="Contact Name" type="string" />
           <camunda:formField id="customerType" label="Customer Type" type="string" />
           <camunda:formField id="customerPhone" label="Phone" type="string" />
-          <camunda:formField id="v_productDesc" label="Order" type="long" />
-          <camunda:formField id="v_productAmount" label="Number of Items" type="string" />
+          <camunda:formField id="v_productDesc" label="Order" type="string" />
+          <camunda:formField id="v_productAmount" label="Number of Items" type="long" />
           <camunda:formField id="v_productPrice" label="Price per Unit" type="long">
             <camunda:validation>
               <camunda:constraint name="readonly" />
             </camunda:validation>
           </camunda:formField>
-          <camunda:formField id="totalPrice" label="Total Price" type="long" />
-          <camunda:formField id="salesMansNote" label="Notes" type="string" />
+          <camunda:formField id="salemansNote" label="Notes" type="string" />
           <camunda:formField id="specialDiscount" label="Additional 5% discount" type="boolean" />
         </camunda:formData>
       </bpmn:extensionElements>
@@ -326,17 +330,15 @@
             </camunda:validation>
           </camunda:formField>
           <camunda:formField id="totalPrice" label="Total Price" type="long" />
-          <camunda:formField id="approveOffer" label="Approve Offer" type="enum" defaultValue="offer_approved">
-            <camunda:value id="offer_approved" name="Current offer approved" />
-            <camunda:value id="new_offer" name="New offer needed" />
-          </camunda:formField>
+          <camunda:formField id="offerApproved" label="Approve original offer without any changes (if not ticked, a new offer will be created)" type="boolean" defaultValue="true" />
+          <camunda:formField id="discount" label="Discount" type="long" />
         </camunda:formData>
       </bpmn:extensionElements>
       <bpmn:incoming>SequenceFlow_0s5580a</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0tqk52f</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:sequenceFlow id="SequenceFlow_1q95nc4" sourceRef="ExclusiveGateway_0nz1qpe" targetRef="ServiceTask_1660ilh">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${approveOffer=='new_offer'}</bpmn:conditionExpression>
+    <bpmn:sequenceFlow id="SequenceFlow_1q95nc4" name="new offer needed" sourceRef="ExclusiveGateway_0nz1qpe" targetRef="ServiceTask_1660ilh">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${offerApproved==false}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:serviceTask id="ServiceTask_1660ilh" name="Create Offer" camunda:class="com.camunda.esi.project.ProductConfiguratorProcess.CreateOfferDelegate">
       <bpmn:incoming>SequenceFlow_03hw7go</bpmn:incoming>
@@ -592,6 +594,9 @@
       <bpmndi:BPMNEdge id="SequenceFlow_14xp3tp_di" bpmnElement="SequenceFlow_14xp3tp">
         <di:waypoint x="1903" y="640" />
         <di:waypoint x="1970" y="640" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1894" y="617" width="71" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0tqk52f_di" bpmnElement="SequenceFlow_0tqk52f">
         <di:waypoint x="1811" y="557" />
@@ -783,6 +788,9 @@
         <di:waypoint x="1878" y="819" />
         <di:waypoint x="1383" y="819" />
         <di:waypoint x="1383" y="683" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1885" y="723" width="85" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Participant_0t8x0bv_di" bpmnElement="Participant_0pmthxr" isHorizontal="true">
         <dc:Bounds x="188" y="1255" width="3299" height="120" />

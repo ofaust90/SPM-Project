@@ -24,7 +24,7 @@ public class CreateOfferDelegate extends BaseDelegateClass implements JavaDelega
 		
 		
 		newOffer.setContact_id((int) execution.getVariable("customerID"));
-		newOffer.setDiscount((double) execution.getVariable("discount"));
+		newOffer.setDiscount((long) execution.getVariable("discount"));
 		newOffer.setPrice((long) execution.getVariable("v_productPrice"));
 		newOffer.setAmount((long) execution.getVariable("v_productAmount"));
 		newOffer.setPositions((String) execution.getVariable("v_productDesc"));
@@ -37,6 +37,7 @@ public class CreateOfferDelegate extends BaseDelegateClass implements JavaDelega
 		execution.setVariable("totalPrice", (int) returnedOffer.getTotal_price());
 		execution.setVariable("offerID", returnedOffer.getId());
 		execution.setVariable("offerApproved", true);
+		
 		
 	}
 	
