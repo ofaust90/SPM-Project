@@ -21,6 +21,10 @@ public class SendOfferDelegate extends BaseDelegateClass implements JavaDelegate
 			
 	//call method to consume rest service
 	sendOffer(offerID,email,businessKey);	
+	
+	byte[] instanceID = (byte[]) execution.getVariable("blockchain_instanceID");;
+	String txHash = blockchain.registerActivity(instanceID, execution.getBusinessKey(), execution.getCurrentActivityName(),"John", "Offer sent to: "+email);
+	execution.setVariable("TXHASH_offerSent", txHash);
 		
 	}
 	

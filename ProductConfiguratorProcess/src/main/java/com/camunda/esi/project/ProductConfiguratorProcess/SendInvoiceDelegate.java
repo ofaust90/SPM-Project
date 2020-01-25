@@ -28,6 +28,10 @@ public class SendInvoiceDelegate extends BaseDelegateClass implements JavaDelega
 		
 		super.sendMessage(camundaMsg);
 			
+		
+		byte[] instanceID = (byte[]) execution.getVariable("blockchain_instanceID");;
+		String txHash = blockchain.registerActivity(instanceID, execution.getBusinessKey(), execution.getCurrentActivityName(),"Billing", "Invoice sent to: "+email);
+		execution.setVariable("TXHASH_invoiceSent", txHash);
 		}
 		
 

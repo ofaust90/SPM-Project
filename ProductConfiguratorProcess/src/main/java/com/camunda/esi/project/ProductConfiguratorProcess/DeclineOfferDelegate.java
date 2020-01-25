@@ -11,6 +11,10 @@ public class DeclineOfferDelegate extends BaseDelegateClass implements JavaDeleg
 
 			int offerID = (int) execution.getVariable("offerID");
 			declineOffer(offerID);
+			
+			byte[] instanceID = (byte[]) execution.getVariable("blockchain_instanceID");;
+			String txHash = blockchain.registerActivity(instanceID, execution.getBusinessKey(), execution.getCurrentActivityName(),"-", "-");
+			execution.setVariable("TXHASH_declined", txHash);
 	}
 
 	public void declineOffer(int id) {

@@ -149,6 +149,26 @@
 	    <version>1.19.4</version>
 	</dependency>
 		
+	<dependency>
+    <groupId>org.web3j</groupId>
+    <artifactId>core</artifactId>
+    <version>4.5.11</version>
+    <exclusions>
+    	 <exclusion>
+     	 <groupId>org.slf4j</groupId>
+     	 <artifactId>slf4j-api</artifactId>
+    </exclusion>
+    </exclusions>
+     
+
+</dependency>
+
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-simple</artifactId>
+    <version>1.7.30</version>
+  
+</dependency>
 
 
   </dependencies>

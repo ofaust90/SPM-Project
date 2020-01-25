@@ -38,6 +38,9 @@ public class CreateOfferDelegate extends BaseDelegateClass implements JavaDelega
 		execution.setVariable("offerID", returnedOffer.getId());
 		execution.setVariable("offerApproved", true);
 		
+		byte[] instanceID = (byte[]) execution.getVariable("blockchain_instanceID");;
+		String txHash = blockchain.registerActivity(instanceID, execution.getBusinessKey(), execution.getCurrentActivityName(),"John", "Offer created with id: "+execution.getVariable("offerID"));
+		execution.setVariable("TXHASH_createOffer", txHash);	
 		
 	}
 	

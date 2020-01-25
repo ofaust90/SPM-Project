@@ -16,6 +16,10 @@ public class ShippingNotifcationDelegate extends BaseDelegateClass implements Ja
 		camundaMsg.setMessageName("shipping_notification");
 		
 		super.sendMessage(camundaMsg);
+		
+		byte[] instanceID = (byte[]) execution.getVariable("blockchain_instanceID");;
+		String txHash = blockchain.registerActivity(instanceID, execution.getBusinessKey(), execution.getCurrentActivityName(),"Peter", "Goods shipped");
+		execution.setVariable("TXHASH_shipping", txHash);
 
 	}
 

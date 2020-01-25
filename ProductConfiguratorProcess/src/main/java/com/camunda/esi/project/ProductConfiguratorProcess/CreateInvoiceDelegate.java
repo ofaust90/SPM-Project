@@ -15,6 +15,10 @@ public class CreateInvoiceDelegate extends BaseDelegateClass implements JavaDele
 		
 		execution.setVariable("invoiceID", createInvoice(offerID));
 		
+		
+		byte[] instanceID = (byte[]) execution.getVariable("blockchain_instanceID");;
+		String txHash = blockchain.registerActivity(instanceID, execution.getBusinessKey(), execution.getCurrentActivityName(),"Billing", "Invoice created with id: "+execution.getVariable("invoiceID"));
+		execution.setVariable("TXHASH_createInvoice", txHash);	
 
 	}
 

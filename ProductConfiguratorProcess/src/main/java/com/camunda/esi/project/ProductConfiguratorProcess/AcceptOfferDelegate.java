@@ -11,6 +11,10 @@ public class AcceptOfferDelegate extends BaseDelegateClass implements JavaDelega
 
 			int offerID = (int) execution.getVariable("offerID");
 			acceptOffer(offerID);
+			
+			byte[] instanceID = (byte[]) execution.getVariable("blockchain_instanceID");;
+			String txHash = blockchain.registerActivity(instanceID, execution.getBusinessKey(), execution.getCurrentActivityName(),"-", "-");
+			execution.setVariable("TXHASH_shipping", txHash);
 	}
 
 	public void acceptOffer(int id) {

@@ -514,7 +514,7 @@ public class BexioConnector implements CRMConnector{
 		
 		String msgbody = "{\n" + 
 				"  \"recipient_email\":  \"" + sendExchange.getEmail() +"\",\n" + 
-				"  \"subject\": \"Your Email\",\n" + 
+				"  \"subject\": \"Your Invoice\",\n" + 
 				"  \"message\": \"Dear Customer, please find your Inovice follwing this link: [Network Link]\"\n" + 
 				"}";
 		System.out.println("body: "+msgbody);

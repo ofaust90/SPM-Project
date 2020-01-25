@@ -7,7 +7,11 @@ import org.camunda.bpm.engine.delegate.JavaDelegate;
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
+import org.web3j.crypto.Credentials;
+import org.web3j.protocol.Web3j;
+import org.web3j.protocol.http.HttpService;
 
+import com.camunda.esi.project.ProductConfiguratorProcess.blockchain.smartcontract.Camundaprocess;
 import com.camunda.esi.project.ProductConfiguratorProcess.model.CustomerExchange;
 import com.camunda.esi.project.ProductConfiguratorProcess.model.Message;
 
@@ -79,6 +83,12 @@ public class CreateLeadDelegate extends BaseDelegateClass implements JavaDelegat
 		
 
 	
+
+		
+		byte[] instanceID = blockchain.createCollaboration(execution.getBusinessKey());
+		execution.setVariable("blockchain_instanceID", instanceID);;
+		String txHash = blockchain.registerActivity(instanceID, execution.getBusinessKey(), execution.getCurrentActivityName(),"John", "Customer created with id: "+execution.getVariable("customerID"));
+		execution.setVariable("TXHASH_createLead", txHash);		
 	}
 	
 	

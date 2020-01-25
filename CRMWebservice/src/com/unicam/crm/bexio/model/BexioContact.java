@@ -25,6 +25,7 @@ public class BexioContact implements Customer {
 	private String mail;
 	private String postcode;
 	private String phone_fixed;
+	private String language_id;
 	
 	
 	
@@ -33,6 +34,7 @@ public class BexioContact implements Customer {
 		this.user_id = "1";
 		this.owner_id = "1";
 		this.contact_type_id = "1";
+		this.language_id = "4"; //4 = english
 		
 	}
 	
@@ -115,6 +117,14 @@ public class BexioContact implements Customer {
 
 	public void setPhone_fixed(String phone_fixed) {
 		this.phone_fixed = phone_fixed;
+	}
+
+	public String getLanguage_id() {
+		return language_id;
+	}
+
+	public void setLanguage_id(String language_id) {
+		this.language_id = language_id;
 	}
 	
 	

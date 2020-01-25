@@ -5,18 +5,18 @@
     <bpmn:participant id="Participant_1ymuoco" name="Comapny" processRef="ProductConfiguratorProcess" />
     <bpmn:participant id="Participant_13yhzr1" name="Customer" processRef="ProductConfiguratorProcessCustomer" />
     <bpmn:participant id="Participant_0pmthxr" name="CRM Webservice" />
-    <bpmn:messageFlow id="MessageFlow_0i9r4of" sourceRef="Task_0cdypcz" targetRef="StartEventProcessStarted" />
-    <bpmn:messageFlow id="MessageFlow_1hco4rj" sourceRef="Task_0np7v3k" targetRef="IntermediateThrowEvent_041x1vh" />
-    <bpmn:messageFlow id="MessageFlow_1degqo6" sourceRef="Task_034d6qb" targetRef="Participant_0pmthxr" />
-    <bpmn:messageFlow id="MessageFlow_1nrupqb" sourceRef="ServiceTask_1660ilh" targetRef="Participant_0pmthxr" />
-    <bpmn:messageFlow id="MessageFlow_0pzh9u4" sourceRef="Task_0np7v3k" targetRef="Participant_0pmthxr" />
-    <bpmn:messageFlow id="MessageFlow_0720kt9" sourceRef="Task_128awu4" targetRef="Participant_0pmthxr" />
-    <bpmn:messageFlow id="MessageFlow_1cqzn05" sourceRef="Task_1jfmv7z" targetRef="Participant_0pmthxr" />
-    <bpmn:messageFlow id="MessageFlow_05i2610" sourceRef="Task_01fxp1p" targetRef="Participant_0pmthxr" />
-    <bpmn:messageFlow id="MessageFlow_1w4aceq" sourceRef="Participant_0pmthxr" targetRef="ServiceTask_1660ilh" />
-    <bpmn:messageFlow id="MessageFlow_0f5jwwg" sourceRef="Participant_0pmthxr" targetRef="Task_034d6qb" />
-    <bpmn:messageFlow id="MessageFlow_0399en0" sourceRef="Task_1y8v2hs" targetRef="IntermediateThrowEvent_08dp4za" />
-    <bpmn:messageFlow id="MessageFlow_1glggfu" sourceRef="Task_01fxp1p" targetRef="IntermediateThrowEvent_0gzvb4v" />
+    <bpmn:messageFlow id="MessageFlow_0i9r4of" name="Offer request" sourceRef="Task_0cdypcz" targetRef="StartEventProcessStarted" />
+    <bpmn:messageFlow id="MessageFlow_1hco4rj" name="Offer" sourceRef="Task_0np7v3k" targetRef="IntermediateThrowEvent_041x1vh" />
+    <bpmn:messageFlow id="MessageFlow_1degqo6" name="Customer creation" sourceRef="Task_034d6qb" targetRef="Participant_0pmthxr" />
+    <bpmn:messageFlow id="MessageFlow_1nrupqb" name="Offer creation" sourceRef="ServiceTask_1660ilh" targetRef="Participant_0pmthxr" />
+    <bpmn:messageFlow id="MessageFlow_0pzh9u4" name="Send offer request" sourceRef="Task_0np7v3k" targetRef="Participant_0pmthxr" />
+    <bpmn:messageFlow id="MessageFlow_0720kt9" name="Accept offer request" sourceRef="Task_128awu4" targetRef="Participant_0pmthxr" />
+    <bpmn:messageFlow id="MessageFlow_1cqzn05" name="Invoice generation" sourceRef="Task_1jfmv7z" targetRef="Participant_0pmthxr" />
+    <bpmn:messageFlow id="MessageFlow_05i2610" name="Send invoice request" sourceRef="Task_01fxp1p" targetRef="Participant_0pmthxr" />
+    <bpmn:messageFlow id="MessageFlow_1w4aceq" name="Offer retrieval" sourceRef="Participant_0pmthxr" targetRef="ServiceTask_1660ilh" />
+    <bpmn:messageFlow id="MessageFlow_0f5jwwg" name="Customer retrieval" sourceRef="Participant_0pmthxr" targetRef="Task_034d6qb" />
+    <bpmn:messageFlow id="MessageFlow_0399en0" name="Shipping notification" sourceRef="Task_1y8v2hs" targetRef="IntermediateThrowEvent_08dp4za" />
+    <bpmn:messageFlow id="MessageFlow_1glggfu" name="Invoice" sourceRef="Task_01fxp1p" targetRef="IntermediateThrowEvent_0gzvb4v" />
     <bpmn:textAnnotation id="TextAnnotation_15105s6">
       <bpmn:text>The CRM webservice serves as a intermediate layer between business and various CRM software</bpmn:text>
     </bpmn:textAnnotation>
@@ -186,17 +186,17 @@
               <camunda:constraint name="readonly" />
             </camunda:validation>
           </camunda:formField>
-          <camunda:formField id="totalPrice" label="Total Price" type="long" />
+          <camunda:formField id="discount" label="Discount" type="long" />
+          <camunda:formField id="totalPrice" label="Total Price" type="long">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
           <camunda:formField id="salemansNote" label="Notes" type="string" />
           <camunda:formField id="offer_status" label="Offer status" type="enum" defaultValue="e_declined">
             <camunda:value id="e_accepted" name="accepted" />
             <camunda:value id="e_declined" name="declined" />
             <camunda:value id="e_new_offer" name="new offer " />
-          </camunda:formField>
-          <camunda:formField id="discount" label="Discount granted" type="long">
-            <camunda:validation>
-              <camunda:constraint name="readonly" />
-            </camunda:validation>
           </camunda:formField>
         </camunda:formData>
       </bpmn:extensionElements>
@@ -329,9 +329,13 @@
               <camunda:constraint name="readonly" />
             </camunda:validation>
           </camunda:formField>
-          <camunda:formField id="totalPrice" label="Total Price" type="long" />
-          <camunda:formField id="offerApproved" label="Approve original offer without any changes (if not ticked, a new offer will be created)" type="boolean" defaultValue="true" />
           <camunda:formField id="discount" label="Discount" type="long" />
+          <camunda:formField id="totalPrice" label="Total Price" type="long">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="offerApproved" label="Approve original offer without any changes (if not ticked, a new offer will be created)" type="boolean" defaultValue="true" />
         </camunda:formData>
       </bpmn:extensionElements>
       <bpmn:incoming>SequenceFlow_0s5580a</bpmn:incoming>
@@ -538,6 +542,9 @@
       <bpmndi:BPMNEdge id="MessageFlow_0i9r4of_di" bpmnElement="MessageFlow_0i9r4of">
         <di:waypoint x="532" y="245" />
         <di:waypoint x="532" y="622" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="546" y="436" width="64" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="StartEvent_1tebuvy_di" bpmnElement="StartEventProcessStarted">
         <dc:Bounds x="514" y="622" width="36" height="36" />
@@ -622,6 +629,9 @@
       <bpmndi:BPMNEdge id="MessageFlow_1hco4rj_di" bpmnElement="MessageFlow_1hco4rj">
         <di:waypoint x="1993" y="600" />
         <di:waypoint x="1993" y="223" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1996" y="409" width="25" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0fgjjcu_di" bpmnElement="SequenceFlow_0fgjjcu">
         <di:waypoint x="2011" y="205" />
@@ -798,34 +808,58 @@
       <bpmndi:BPMNEdge id="MessageFlow_1degqo6_di" bpmnElement="MessageFlow_1degqo6">
         <di:waypoint x="730" y="680" />
         <di:waypoint x="730" y="1255" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="631" y="914" width="90" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="MessageFlow_1nrupqb_di" bpmnElement="MessageFlow_1nrupqb">
         <di:waypoint x="1333" y="680" />
         <di:waypoint x="1333" y="1248" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1255" y="912" width="67" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="MessageFlow_0pzh9u4_di" bpmnElement="MessageFlow_0pzh9u4">
         <di:waypoint x="2020" y="680" />
         <di:waypoint x="2020" y="1255" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2028" y="905" width="51" height="27" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="MessageFlow_0720kt9_di" bpmnElement="MessageFlow_0720kt9">
         <di:waypoint x="2702" y="785" />
         <di:waypoint x="2702" y="1255" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2641" y="904" width="59" height="27" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="MessageFlow_1cqzn05_di" bpmnElement="MessageFlow_1cqzn05">
         <di:waypoint x="2919" y="1030" />
         <di:waypoint x="2919" y="1255" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2885" y="1211" width="90" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="MessageFlow_05i2610_di" bpmnElement="MessageFlow_05i2610">
         <di:waypoint x="3266" y="1030" />
         <di:waypoint x="3266" y="1255" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="3272" y="1204" width="63" height="27" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="MessageFlow_1w4aceq_di" bpmnElement="MessageFlow_1w4aceq">
         <di:waypoint x="1351" y="1251" />
         <di:waypoint x="1351" y="681" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1362" y="912" width="67" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="MessageFlow_0f5jwwg_di" bpmnElement="MessageFlow_0f5jwwg">
         <di:waypoint x="753" y="1255" />
         <di:waypoint x="753" y="680" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="767" y="916" width="90" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="TextAnnotation_15105s6_di" bpmnElement="TextAnnotation_15105s6">
         <dc:Bounds x="3002" y="1387" width="100" height="125.71428571428572" />
@@ -899,10 +933,16 @@
       <bpmndi:BPMNEdge id="MessageFlow_0399en0_di" bpmnElement="MessageFlow_0399en0">
         <di:waypoint x="3076" y="1080" />
         <di:waypoint x="3076" y="223" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="3083" y="427" width="53" height="27" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="MessageFlow_1glggfu_di" bpmnElement="MessageFlow_1glggfu">
         <di:waypoint x="3258" y="950" />
         <di:waypoint x="3258" y="223" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="3269" y="435" width="35" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

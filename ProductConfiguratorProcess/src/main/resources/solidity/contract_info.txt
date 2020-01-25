@@ -1,0 +1,20 @@
+contract info:
+---------------
+Contract_Address: 0x07560a88e5f17252a236f47ebc00d6eb7f6dffb8
+TransactionHash_contractcreation: 0x82bd9640cf15b0cfb855c067f48f1bec549122e920edae231d572256b8dffabc
+
+
+
+
+infura
+---------
+https://infura.io/project/975ee58ff5a144c48a603e16a15cc88f?isOnboarding=true
+        login: oliversimon.faust@studenti.unicam.it
+        pw: Camerino2020
+        endpoint (rinkeby): rinkeby.infura.io/v3/975ee58ff5a144c48a603e16a15cc88f
+        project id: 975ee58ff5a144c48a603e16a15cc88f
+
+
+web3j cli wrapper generation:
+-----------------------------
+web3j solidity generate -a=<abiFile> -b=<binFile> -o=<destinationFileDir> -p=<packageName>

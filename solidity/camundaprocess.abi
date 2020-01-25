@@ -1,0 +1,58 @@
+[
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "businessKey",
+				"type": "string"
+			}
+		],
+		"name": "createCollaboration",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "instanceID",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "instanceID",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "string",
+				"name": "businessKey",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "taskName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "executor",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "additionalInfo",
+				"type": "string"
+			}
+		],
+		"name": "registerActivity",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]
