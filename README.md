@@ -33,4 +33,6 @@ To run the project on your machine, you need to do the following steps:
     - ProductConfiguratorWebsite (Folder)
   - Open your webbrowser and go to the Product Configurator: http://localhost:8080/ProductConfiguratorWebsite/WebContent
   - Open Camunda Tasklist at: http://localhost:8080/camunda/app/tasklist/default/#/login
+  
+  For further information and login credentials, please see the appendix of the provided documentation
 
