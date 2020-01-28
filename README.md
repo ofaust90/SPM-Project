@@ -17,6 +17,8 @@
     - Includes the smart contract related files
   - Deployment
     - Includes the war files and the website which should be put into the tomacts webapps folder to run the project locally.
+  - Documentation
+    - Includes the documentation of the project
 
 
 
