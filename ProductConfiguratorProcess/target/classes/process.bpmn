@@ -63,6 +63,9 @@
     <bpmn:serviceTask id="Task_034d6qb" name="create lead" camunda:class="com.camunda.esi.project.ProductConfiguratorProcess.CreateLeadDelegate">
       <bpmn:incoming>SequenceFlow1</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1khiufz</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_0x916ef">
+        <bpmn:targetRef>DataStoreReference_0dup7ex</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
     </bpmn:serviceTask>
     <bpmn:exclusiveGateway id="ExclusiveGateway_0moy0ov" name="Callback requested?">
       <bpmn:incoming>SequenceFlow_1khiufz</bpmn:incoming>
@@ -123,6 +126,9 @@
     <bpmn:sendTask id="Task_0np7v3k" name="Send offer" camunda:class="com.camunda.esi.project.ProductConfiguratorProcess.SendOfferDelegate">
       <bpmn:incoming>SequenceFlow_14xp3tp</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1bgzgbf</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_1l0get6">
+        <bpmn:targetRef>DataStoreReference_0dup7ex</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
     </bpmn:sendTask>
     <bpmn:sequenceFlow id="SequenceFlow_1bgzgbf" sourceRef="Task_0np7v3k" targetRef="ExclusiveGateway_1d8e7fc" />
     <bpmn:eventBasedGateway id="ExclusiveGateway_1d8e7fc">
@@ -158,6 +164,9 @@
       <bpmn:incoming>SequenceFlow_1p7ycjl</bpmn:incoming>
       <bpmn:incoming>SequenceFlow_13exham</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1sypsq2</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_1duuiwn">
+        <bpmn:targetRef>DataStoreReference_0dup7ex</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
     </bpmn:serviceTask>
     <bpmn:sequenceFlow id="SequenceFlow_1pnw251" sourceRef="Task_1o0bu6n" targetRef="ExclusiveGateway_014flfl" />
     <bpmn:userTask id="Task_1o0bu6n" name="Call and discuss offer" camunda:assignee="john">
@@ -226,6 +235,9 @@
     <bpmn:serviceTask id="Task_1jfmv7z" name="Generate invoice" camunda:class="com.camunda.esi.project.ProductConfiguratorProcess.CreateInvoiceDelegate">
       <bpmn:incoming>SequenceFlow_0kzxhhv</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1ct2f22</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_0my70go">
+        <bpmn:targetRef>DataStoreReference_0dup7ex</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
     </bpmn:serviceTask>
     <bpmn:userTask id="Task_0us3uq0" name="Pack and ship good" camunda:assignee="peter">
       <bpmn:extensionElements>
@@ -349,11 +361,17 @@
       <bpmn:incoming>SequenceFlow_1q95nc4</bpmn:incoming>
       <bpmn:incoming>SequenceFlow_11tplqu</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0sxd5ul</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_0be03ru">
+        <bpmn:targetRef>DataStoreReference_0dup7ex</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
     </bpmn:serviceTask>
     <bpmn:sequenceFlow id="SequenceFlow_09nddnw" sourceRef="Task_0zp7ss8" targetRef="EndEvent_1khdw9h" />
     <bpmn:serviceTask id="Task_0zp7ss8" name="Mark offer as declined" camunda:class="com.camunda.esi.project.ProductConfiguratorProcess.DeclineOfferDelegate">
       <bpmn:incoming>SequenceFlow_1uca1ez</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_09nddnw</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_19cqobo">
+        <bpmn:targetRef>DataStoreReference_0dup7ex</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
     </bpmn:serviceTask>
     <bpmn:sequenceFlow id="SequenceFlow_11tplqu" sourceRef="Task_13trwmp" targetRef="ServiceTask_1660ilh" />
     <bpmn:endEvent id="EndEvent_10ll2sd" name="Process ended">
@@ -370,6 +388,9 @@
     <bpmn:sendTask id="Task_01fxp1p" name="Send invoice" camunda:class="com.camunda.esi.project.ProductConfiguratorProcess.SendInvoiceDelegate">
       <bpmn:incoming>SequenceFlow_1en650v</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_14sajqm</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_05hskb5">
+        <bpmn:targetRef>DataStoreReference_0dup7ex</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
     </bpmn:sendTask>
     <bpmn:sequenceFlow id="SequenceFlow_14sajqm" sourceRef="Task_01fxp1p" targetRef="EndEvent_10ll2sd" />
     <bpmn:sequenceFlow id="SequenceFlow_1ct2f22" sourceRef="Task_1jfmv7z" targetRef="ExclusiveGateway_1d6jgib" />
@@ -378,11 +399,18 @@
     <bpmn:sendTask id="Task_1y8v2hs" name="Send shipping notification" camunda:class="com.camunda.esi.project.ProductConfiguratorProcess.ShippingNotifcationDelegate">
       <bpmn:incoming>SequenceFlow_0ly1enc</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1nmpxee</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_1bydck0">
+        <bpmn:targetRef>DataStoreReference_0dup7ex</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
     </bpmn:sendTask>
     <bpmn:serviceTask id="Task_13trwmp" name="Mark offer as declined" camunda:class="com.camunda.esi.project.ProductConfiguratorProcess.DeclineOfferDelegate">
       <bpmn:incoming>SequenceFlow_0rrmixx</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_11tplqu</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_0he5kol">
+        <bpmn:targetRef>DataStoreReference_0dup7ex</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
     </bpmn:serviceTask>
+    <bpmn:dataStoreReference id="DataStoreReference_0dup7ex" name="Etherum Blockchain" />
   </bpmn:process>
   <bpmn:process id="ProductConfiguratorProcessCustomer" name="ProductConfiguratorProcessCustomer" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1fyuk21">
@@ -398,7 +426,7 @@
     </bpmn:receiveTask>
     <bpmn:sequenceFlow id="SequenceFlow_0ob70af" sourceRef="StartEvent_1fyuk21" targetRef="Task_1mql2u8" />
     <bpmn:sequenceFlow id="SequenceFlow_1g0y5in" sourceRef="Task_1mql2u8" targetRef="Task_0cdypcz" />
-    <bpmn:boundaryEvent id="BoundaryEvent_1v1dqdw" attachedToRef="Task_0cdypcz">
+    <bpmn:boundaryEvent id="BoundaryEvent_1v1dqdw" name="Idle for more than 5 Minutes" attachedToRef="Task_0cdypcz">
       <bpmn:outgoing>SequenceFlow_0rsexnq</bpmn:outgoing>
       <bpmn:timerEventDefinition>
         <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">PT5M</bpmn:timeDuration>
@@ -554,6 +582,9 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BoundaryEvent_0ec0nk9_di" bpmnElement="BoundaryEvent_1v1dqdw">
         <dc:Bounds x="539" y="227" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="551" y="291" width="87" height="27" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="EndEvent_05xhi9t_di" bpmnElement="EndEvent_05xhi9t">
         <dc:Bounds x="651" y="267" width="36" height="36" />
@@ -830,7 +861,7 @@
         <di:waypoint x="2702" y="785" />
         <di:waypoint x="2702" y="1255" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="2641" y="904" width="59" height="27" />
+          <dc:Bounds x="2705" y="909" width="59" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="MessageFlow_1cqzn05_di" bpmnElement="MessageFlow_1cqzn05">
@@ -862,11 +893,11 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="TextAnnotation_15105s6_di" bpmnElement="TextAnnotation_15105s6">
-        <dc:Bounds x="3002" y="1387" width="100" height="125.71428571428572" />
+        <dc:Bounds x="3313" y="1387" width="100" height="126" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Association_0dhhxnh_di" bpmnElement="Association_0dhhxnh">
-        <di:waypoint x="2378" y="1375" />
-        <di:waypoint x="3002" y="1444" />
+        <di:waypoint x="3277" y="1375" />
+        <di:waypoint x="3313" y="1407" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="ServiceTask_0ziudwa_di" bpmnElement="Task_0zp7ss8">
         <dc:Bounds x="2797" y="501" width="100" height="80" />
@@ -943,6 +974,69 @@
         <bpmndi:BPMNLabel>
           <dc:Bounds x="3269" y="435" width="35" height="14" />
         </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="DataStoreReference_0dup7ex_di" bpmnElement="DataStoreReference_0dup7ex">
+        <dc:Bounds x="1724" y="1425" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1662" y="1464" width="54" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_0x916ef_di" bpmnElement="DataOutputAssociation_0x916ef">
+        <di:waypoint x="772" y="681" />
+        <di:waypoint x="772" y="788" />
+        <di:waypoint x="894" y="788" />
+        <di:waypoint x="894" y="1450" />
+        <di:waypoint x="1724" y="1450" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_0be03ru_di" bpmnElement="DataOutputAssociation_0be03ru">
+        <di:waypoint x="1321" y="680" />
+        <di:waypoint x="1321" y="745" />
+        <di:waypoint x="1199" y="745" />
+        <di:waypoint x="1199" y="1436" />
+        <di:waypoint x="1722" y="1436" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_1l0get6_di" bpmnElement="DataOutputAssociation_1l0get6">
+        <di:waypoint x="2002" y="683" />
+        <di:waypoint x="2002" y="1390" />
+        <di:waypoint x="1749" y="1390" />
+        <di:waypoint x="1749" y="1425" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_0he5kol_di" bpmnElement="DataOutputAssociation_0he5kol">
+        <di:waypoint x="2584" y="877" />
+        <di:waypoint x="2584" y="1416" />
+        <di:waypoint x="1801" y="1416" />
+        <di:waypoint x="1774" y="1434" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_1duuiwn_di" bpmnElement="DataOutputAssociation_1duuiwn">
+        <di:waypoint x="2672" y="787" />
+        <di:waypoint x="2672" y="1450" />
+        <di:waypoint x="1774" y="1450" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_19cqobo_di" bpmnElement="DataOutputAssociation_19cqobo">
+        <di:waypoint x="2826" y="582" />
+        <di:waypoint x="2826" y="1478" />
+        <di:waypoint x="1803" y="1478" />
+        <di:waypoint x="1774" y="1463" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_0my70go_di" bpmnElement="DataOutputAssociation_0my70go">
+        <di:waypoint x="2894" y="1030" />
+        <di:waypoint x="2894" y="1059" />
+        <di:waypoint x="2855" y="1059" />
+        <di:waypoint x="2855" y="1516" />
+        <di:waypoint x="1767" y="1516" />
+        <di:waypoint x="1767" y="1478" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_1bydck0_di" bpmnElement="DataOutputAssociation_1bydck0">
+        <di:waypoint x="3080" y="1160" />
+        <di:waypoint x="3080" y="1536" />
+        <di:waypoint x="1749" y="1536" />
+        <di:waypoint x="1749" y="1475" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_05hskb5_di" bpmnElement="DataOutputAssociation_05hskb5">
+        <di:waypoint x="3240" y="1033" />
+        <di:waypoint x="3240" y="1554" />
+        <di:waypoint x="1727" y="1554" />
+        <di:waypoint x="1727" y="1478" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
